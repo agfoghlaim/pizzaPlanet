@@ -5,6 +5,8 @@
 	<title>Pizza Planet</title>
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="all.css"> 
+	<!-- custom fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 
 </head>
@@ -12,6 +14,8 @@
 
 	<div class="wrapper">
 		<div class="nav-wrap">
+
+			<!-- main menu -->
 			<nav class="menu show">
 				<ul class="menu-nav show">
 					<li class="nav-item current show">
@@ -35,7 +39,7 @@
 				</ul>
 			</nav> 
 
-			<!-- burger menu -->
+			<!-- burger menu button -->
 			<div class="menu-btn closed">
 				<div class="btn-line"></div>
 				<div class="btn-line"></div>
@@ -46,10 +50,10 @@
 
   
  		<header class="header">
-			<!--HEADER - background layer, stars generated in js--> 
+			<!--HEADER - background layer, stars generated in home.js--> 
 			<div id="stars"></div>
 
-			<!--HEADER - middle layer, space veg --> 	
+			<!--HEADER - middle layer, space veg--> 	
 			<img class="spaceVeg" src="images/spaceVeg.svg" alt="">
 		
 			<!--HEADER - front layer, pizzaPlanet Logo --> 
@@ -131,6 +135,8 @@
 							<circle class="slicePep letter1" style="fill:#F1F4ED;" cx="134.719" cy="69.768" r="4"/>
 				</svg>
 			</div> <!-- end div.main-img -->
+
+			<!-- tagline -->
 			<h1 class="now-delivering">Now delivering to Earth</h1>
 		
 	    </header>
@@ -157,6 +163,7 @@
 				</div>
 			</section>
 
+			<!-- section break -->
 			<div class="headline headline-red"><h1 class="dark-text">Most Popular Pizzas</h1></div>
 
 			<!-- main pizza shop section -->
@@ -170,104 +177,20 @@
 						<a href="pizzaMaker.html" class="textBtn brightGreen-bg">Create</a>
 					</div>
 				</div>
-<!-- 
-				<div class="pizzaItem pizzaItem2">
-					<img src="images/pizzaMaker/pizza_trans.png" alt="">
-					<h3>The Orion Olive</h3>
-					<h4 class="price">€11</h4>
-					<p>Olives, tomatoes & cheese</p>
-					<div class="cartArea">
-						<button class="cartBtn brightGreen-bg cartBtnMinus" data-pizza="orion">-</button>
-						<button class="cartBtn brightGreen-bg cartBtnPlus" data-pizza="orion">+</button>
-					</div>
-				</div>
-				<div class="pizzaItem pizzaItem3">
-					<img src="images/pizzas/pizza-hm.png" alt="">
-					<h3>Kevin Bacon & Mushroom</h3>
-					<h4 class="price">€9</h4>
-					<p>Ham, mushroom &cheese.</p>
-					<div class="cartArea">
-						<button class="cartBtn brightGreen-bg cartBtnMinus" data-pizza="hs">-</button>
-						<button class="cartBtn brightGreen-bg cartBtnPlus" data-pizza="hs">+</button>
-					</div>
-				</div>
-				<div class="pizzaItem pizzaItem4">
-					<img src="images/pizzas/pizza-pm.png" alt="">
-					<h3>The Sandra Bullock</h3>
-					<h4 class="price">€12</h4>
-					<p>Peperoni, peppers & cheese.</p>
-					<div class="cartArea">
-						<button class="cartBtn brightGreen-bg cartBtnMinus" data-pizza="sandra">-</button>
-						<button class="cartBtn brightGreen-bg  cartBtnPlus" data-pizza="sandra">+</button>
-					</div>
-				</div>
-				
-					<div class="pizzaItem pizzaItem5">
-						<img src="images/pizzaMaker/pizza_trans_question.png" alt="">
-						<h3>Create Your Own</h3>
-						<h4 class="price">From €5</h4>
-						<p>Make your pizza wishes come true.</p>
-						<div class="cartArea">
-							<a href="pizzaMaker.html" class="textBtn brightGreen-bg">Create</a>
-						</div>
-					</div>
-		
-					<div class="pizzaItem pizzaItem6">
-						<img src="images/pizzaMaker/pizza_trans.png" alt="">
-						<h3>The Orion Olive</h3>
-						<h4 class="price">€11</h4>
-						<p>Olives, tomatoes & cheese</p>
-						<div class="cartArea">
-							<button class="cartBtn brightGreen-bg cartBtnMinus" data-pizza="orion">-</button>
-							<button class="cartBtn brightGreen-bg cartBtnPlus" data-pizza="orion">+</button>
-						</div>
-					</div>
-					<div class="pizzaItem pizzaItem7">
-						<img src="images/pizzas/pizza-hm.png" alt="">
-						<h3>Bacon & Mushroom</h3>
-						<h4 class="price">€9</h4>
-						<p>Ham, mushroom &cheese.</p>
-						<div class="cartArea">
-							<button class="cartBtn brightGreen-bg cartBtnMinus" data-pizza="hs">-</button>
-							<button class="cartBtn brightGreen-bg cartBtnPlus" data-pizza="hs">+</button>
-						</div>
-					</div>
-					<div class="pizzaItem pizzaItem8">
-						<img src="images/pizzas/pizza-pm.png" alt="">
-						<h3>The Sandra Bullock</h3>
-						<h4 class="price">€12</h4>
-						<p>Peperoni, peppers & cheese.</p>
-						<div class="cartArea">
-							<button class="cartBtn brightGreen-bg cartBtnMinus" data-pizza="sandra">-</button>
-							<button class="cartBtn brightGreen-bg  cartBtnPlus" data-pizza="sandra">+</button>
-						</div>
-					</div>	 -->
+				<!-- create your own link hardcoded, the other pizzas are generated in js/home.js -->
 			</section>
 
 			<div class="headline headline-red"><h1 class="dark-text">Deals</h1></div>
 
 			<!-- deals section section -->
 			<section class="dealsContainer">
-				<!-- <div class="dealItem dealItem1">
-					<img src="images/pizzaMaker/pizza_trans_question.png" alt="">
-					<p class="plus">+</p class="plus">
-					<img class="dealDrink" src="images/pizzas/water.png" alt="">
-					<div class="dealCartArea">
-							<h4 class="price">€9.99</h4>
-							<p>Pizza and a drink.</p>
-						<div class="cart-btn-contain">
-							<button class="cartBtn brightGreen-bg">-</button>
-							<button class="cartBtn brightGreen-bg">+</button>
-						</div>
-					</div>
-				</div>
-			-->
-
+				<!-- deals are generated in js/home.js -->
 			</section>
 
 			<footer>
 				<p>Pizza Planet 2018</p>
 			</footer>
+
 	  	</div><!-- end content -->
 	</div> <!-- end wrapper-->
 	<script src="js/home.js"></script>

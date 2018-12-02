@@ -5,10 +5,11 @@
 	<title>Pizza Planet</title>
 <link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="all.css"> 
-	<link rel="stylesheet" href="pizzaMaker.css">
-	<style>
-
-		</style>
+    <link rel="stylesheet" href="pizzaMaker.css">
+    <!-- custom fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	
 </head>
 <body>
 		<div class="wrapper-generic"><!-- whole page -->
@@ -84,8 +85,11 @@
                 grid-template-columns: 3fr 1fr;
                 display: grid;
                 grid-gap: 1rem;
+                min-height: 100vh;
 	
                 }
+
+
                 
                 /* right column */
                 .payment{
@@ -129,7 +133,8 @@
 				
 			}
 			#cart-list tr{
-				background-color: var(--white);
+                background-color: var(--white);
+               
 				}
 
 			/* #cart-list tr:hover {background-color: var(--black);} */

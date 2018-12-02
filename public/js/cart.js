@@ -27,7 +27,10 @@ function updateCartMenu(){
 
   function hideCheckoutBtn(){
     checkoutLink = document.querySelector('.checkout-link');
-    checkoutLink.innerHTML = '';
+    if(checkoutLink !== null){
+      checkoutLink.innerHTML = '';
+    }
+    
   }
 
   writeCartContents();
@@ -109,21 +112,27 @@ function updateCartMenu(){
     //return if cart is empty
    console.log("in remove")
     if(cart.length === 0 ) return;
+
   
         //and for non cyo pizzas, find them in the cart and remove
        // cart.forEach(p=> {
          for(var i = 0; i<cart.length;i++) {
           if(cart[i].dataName === e.target.dataset.name){
-            console.log(cart[i])
-            cart.splice(cart.indexOf(cart[i]),1);
+ 
+              cart.splice(cart.indexOf(cart[i]),1);
+         
+            
             break;
           }
          }  
-    
-       // })
+         
+        //rewrite the cart html 
         writeCartContents();
-        console.log(cart)
+
+    //update the menu
     updateCartMenu();
+
+    //update local storage
     updateStorage();
     deletebtns = document.querySelectorAll('.cart-delete');
   deletebtns.forEach(b=>b.addEventListener('click', removeFromCart));

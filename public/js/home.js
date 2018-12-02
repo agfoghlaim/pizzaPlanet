@@ -9,8 +9,8 @@
     if(i%2===0) size = 3; //make some stars bigger
     if(i%3===0) size = 1; //make some stars smaller
 
-    //set different twinkle classes so twinkle doesn't look like flashing
-    //commented out because it's a bit labour intensive
+    // set different twinkle classes so twinkle doesn't look like flashing
+    // commented out because it's a bit labour intensive
     // if(i%7===0) defaultClass = "twinkle1"; 
     // if(i%9===0) defaultClass = "twinkle2";
     // if(i%11===0) defaultClass = "twinkle3";
@@ -40,11 +40,16 @@
 		border-radius:50%;`);
 
 	//set classes
-  	newStar.setAttribute("class", `${defaultClass}`);
+  newStar.setAttribute("class", `${defaultClass}`);
 
-  	//append to empty .stars div
+  //append to empty .stars div
 	stars.append(newStar);
 }
+
+
+
+
+
 
 //toppings
 const mushrooms = {name: 'mushrooms', price:1, used:false};
@@ -57,6 +62,11 @@ const sauce = {name:'sauce', price: 0, used:false};
 const onion = {name:'onion', price:1, used:false};
 const pineapple = {name: 'pineapple', price:1, used:false};
 
+
+//each pizza has... 
+//a data-name, used as an id and to display the correct img
+//name and price, to display name, price
+//toppings array (individual toppings defined above
 
 const thePizzas = [
   {
@@ -91,6 +101,10 @@ const thePizzas = [
   }
 ];
 
+//each deal has... 
+//a data-name, used as an id and to display the correct img
+//name and price, to display name, price
+//toppings array (individual toppings defined above
 const theDeals = [
   {
     dataName: 'deal1',
@@ -100,25 +114,25 @@ const theDeals = [
   },
   {
     dataName: 'deal2',
-    name:'Pizza and a Drink',
+    name:'Bacon Pizza and a Drink',
     toppings:[bacon, mushrooms, cheese],
     price: 9.99
   },
   {
     dataName: 'deal3',
-    name:'Pizza and a Drink',
+    name:'Peperoni Pizza and a Drink',
     toppings:[sauce, cheese],
     price: 9.99
   },
   {
     dataName: 'deal4',
-    name:'Pizza and a Drink',
+    name:'Mushroom Pizza and a Drink',
     toppings:[mushrooms, olives, cheese],
     price: 9.99
   }
 ]
 
-populatePizzas();
+
 function populatePizzas(){
   const mainShopContainer = document.querySelector('.mainShopContainer');
   if(mainShopContainer === null) return;
@@ -140,7 +154,7 @@ function populatePizzas(){
   })
 }
 
-populateDeals();
+
 function populateDeals(){
   const dealsContainer = document.querySelector('.dealsContainer');
   if(dealsContainer === null) return;
@@ -152,7 +166,7 @@ function populateDeals(){
 					<img class="dealDrink" src="images/pizzas/water.png" alt="">
 					<div class="dealCartArea">
 							<h4 class="price">${deal.price}</h4>
-							<p>Pizza and a drink.</p>
+							<p>${deal.name}</p>
 						<div class="cart-btn-contain">
 							<button class="cartBtn brightGreen-bg cartBtnMinus" data-deal="${deal.dataName}">-</button>
 							<button class="cartBtn brightGreen-bg cartBtnPlus" data-deal="${deal.dataName}">+</button>
@@ -164,19 +178,10 @@ function populateDeals(){
   })
 }
 
-// let str = 
-//         `<div class="dealItem dealItem${i+1}">
-// 					<img src="images/pizzas/${deal.dataName}.png" alt="">
-// 					<p class="plus">+</p class="plus">
-// 					<img class="dealDrink" src="images/pizzas/water.png" alt="">
-// 					<div class="dealCartArea">
-// 							<h4 class="price">${deal.price}</h4>
-// 							<p>Pizza and a drink.</p>
-// 						<div class="cart-btn-contain">
-// 							<button class="cartBtn brightGreen-bg">-</button>
-// 							<button class="cartBtn brightGreen-bg">+</button>
-// 						</div>
-// 					</div>
-// 				</div>`;
+//////////////////////////////////////
+//Populate pizzas and deals section of homepage
+///////////////////////////////////////
 
+populatePizzas();
+populateDeals();
 
