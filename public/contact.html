@@ -2,242 +2,167 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Contact</title>
-<link rel="stylesheet" href="style.css">
+    <title>Contact</title>
+
+     <!-- add stylesheets -->
+    <link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="all.css"> 
     <link rel="stylesheet" href="pizzaMaker.css">
-    <!-- custom fonts -->
+
+    <!-- add custom fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-	<style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="css/contact.css">
 
-                    .intro-generic{
-                background: linear-gradient(to left, #49424180, #494241e0),url(images/pizza-fancy.png);
-                background-size: cover;
-                background-repeat: no-repeat;
-                grid-template-columns: 1fr;
-                grid-template-rows: 1fr;
-                display: grid;
-                grid-gap: 2rem;
-                padding-top: 94px;
-                padding-bottom: 0;
-                padding-left: 2rem;
-                padding-right: 2rem;
-                }
-               /* .wrapper-generic{
-                display: grid;
-                    grid-template-areas: "headergeneric" "contentgeneric";
-                    grid-template-columns: 1fr;
-                    grid-auto-rows: 1fr;
-                    grid-gap: 1rem;
-                    margin-left: 0.5rem;
-                    margin-right: 0.5rem;
-                } */
-               .header-generic{
-                   grid-area:headergeneric;
-                   display: grid;
-               }
-               .content-generic{
-                   grid-area:contentgeneric;
-                   display: grid;
-               }
-			   section.contact{
-				display: grid;
-				grid-template-columns: 1fr;
-				grid-template-rows: 1fr 1fr;
-				align-items: start;
-    			grid-gap: 1rem;
-				justify-content: center;
-				justify-items: center;
-				}
-			   .contact-wrapper{
-				display: grid;
-				width: 100%;
-				grid-template-rows: 100px 1fr;
-			}
-
-         .form-group{
-            /* background: var(--yellow); */
-            display: grid;
-            grid-auto-columns: 50vw;
-            grid-auto-rows: 2rem 3rem;
-            justify-content: center;
-        }
-
-        .form-wrap label{
-            font-weight: bold;
-        }
-
-        .form-group.radio{
-            grid-gap: 0;
-    grid-auto-rows: 2rem;
-    align-items: center;
-    align-content: center;
-        }
-        #contactForm{
-            background: #df8d39;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-        }
-        
-       
-
-		</style>
 </head>
+
 <body>
+    <div class="contact-page-wrapper">
 		<!-- <div class="wrapper-generic">whole page -->
 	    <header class="header-generic">
 	
 			
-                <div class="nav-wrap-generic">
-                        <div class="menu-btn closed">
-                        <div class="btn-line"></div>
-                        <div class="btn-line"></div>
-                        <div class="btn-line"></div>
-                        </div>
-            
-                    <nav class="menu show">
-                        <ul class="menu-nav show">
-                            <li class="nav-item">
-                                <a href="index.html" class="nav-link">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/about.html" class="nav-link">About</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="/pizzaMaker.html" class="nav-link">Create</a>
-                            </li>
-                            <li class="nav-item nav-item-cart">
-                                    <a href="cart.html" class="nav-link">Cart</a>
-                                    <span class="nav-cart-items"></span>
-                                    <span class="nav-cart-dets"></span>
-                                </li>
-                            <li class="nav-item">
-                                <a href="/contact.html current" class="nav-link">Contact</a>
-                            </li>
-                        </ul>
-                    </nav> 
-                </div>
-                <div class="intro-generic">
-                        <div class="headline headline-red ">
-                                <h1>Contact</h1>	
-                        </div>
-                </div>
-            </header>
-
-      
-	<div class="content-generic">
-			
-		<div class="contact-wrapper">
-                     <!-- Contact Section -->
-      
+            <div class="nav-wrap-generic">
+                    <div class="menu-btn closed">
+                    <div class="btn-line"></div>
+                    <div class="btn-line"></div>
+                    <div class="btn-line"></div>
+                    </div>
         
-                <div class="form-wrap">
-                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input class="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name.">
-                            <p id="name-error" class="error-p"></p>
-                         
-                        </div>
-
-                        <div class="form-group">
-                          
-                            <label>Location</label>
-                            <select id="location">
-                                <option value="pizzaplanet">Pizzaplanet</option>
-                                <option value="earth">Earth</option>
-                                <option value="mars">Mars</option>
-                            </select>
-                            <p class="error-p"></p>
+                <nav class="menu show">
+                    <ul class="menu-nav show">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/about.html" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="/pizzaMaker.html" class="nav-link">Create</a>
+                        </li>
+                        <li class="nav-item nav-item-cart">
+                                <a href="cart.html" class="nav-link">Cart</a>
+                                <span class="nav-cart-items"></span>
+                                <span class="nav-cart-dets"></span>
+                            </li>
+                        <li class="nav-item  current">
+                            <a href="/contact.html" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </nav> 
+            </div>
+            <div class="intro-generic">
+                    <div class="headline headline-red ">
+                            <h1>Contact</h1>	
+                    </div>
+            </div>
+    	</header>
+        
+        <div class="content-generic">
+                
+            <div class="contact-wrapper">
+                        <!-- Contact Section -->
+        
+            
+                    <div class="form-wrap">
+                        <form  name="sentMessage" id="contactForm" novalidate="novalidate" >
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input class="form-control" name="name" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name.">
+                                <p id="name-error" class="error-p"></p>
                             
-                        </div>
+                            </div>
 
-                        <div class="form-group">
-                          
-                            <label>Favourite Topping</label>
-                            <select id="favourite">
-                                <option value="cheese">Cheese</option>
-                                <option value="pineapple">Pineapple</option>
-                            </select>
-                            <p class="error-p"></p>
+                            <div class="form-group">
                             
-                        </div>
-
-                        <div class="form-group radio">
-                        
-                            <label>Which is better?</label>
-                                <input type="radio" name="better" value="pizza" checked> Pizza
-                                <input type="radio" name="better" value="burgers"> Burgers
-                    
-                            <p class="error-p"></p>
-                          
-                        </div>
-
-                        <div class="form-group">
-                          
-                            <label>Which planet is the one true red planet?</label>
-                                <select id="redplanet">
-                                        <option value="pizzaplanet">Pizza Planet</option>
-                                        <option value="mars">Mars</option>
+                                <label>Location</label>
+                                <select id="location" name="location">
+                                    <option value="pizzaplanet">Pizzaplanet</option>
+                                    <option value="earth">Earth</option>
+                                    <option value="mars">Mars</option>
                                 </select>
-                    
+                                <p class="error-p"></p>
+                                
+                            </div>
+
+                            <div class="form-group">
+                            
+                                <label>Favourite Topping</label>
+                                <select id="favourite" name="favourite">
+                                    <option value="cheese">Cheese</option>
+                                    <option value="pineapple">Pineapple</option>
+                                </select>
+                                <p class="error-p"></p>
+                                
+                            </div>
+
+                            <div class="form-group radio">
+                            
+                                <label>Which is better?</label>
+                                    <input type="radio" name="better" value="pizza" checked> Pizza
+                                    <input type="radio" name="better" value="burgers"> Burgers
+                        
                                 <p class="error-p"></p>
                             
-                        </div>
+                            </div>
 
-                        <div class="form-group">
-                           
-                            <label>Email Address</label>
-                            <input  id="email" type="email" placeholder="Email Address" required="required">
-                            <p class="error-p" id="email-error"></p>
+                            <div class="form-group">
                             
-                        </div>
-                        <div class="form-group">
-                         
-                            <label>Phone Number</label>
-                            <input class="form-control" id="phone" type="tel" placeholder="Phone Number" required="required">
-                            <p class="error-p" id="phone-error"></p>
-                          
-                        </div>
-                        <div class="form-group">
-                           
-                            <label>Message</label>
-                            <textarea id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
-                            <p class="error-p"></p>
-                           
-                        </div>
-                        <br>
-                  
-                        <div>
-                            <button type="submit" class="brightGreen-bg" id="sendMessageButton">Send</button>
-                        </div>
-                        </form>
-                        <div id="form-feedback">
-                                <p id="form-success"></p>
-                                <p id="form-fail"></p>
-                        </div>
-                           
-               
-                </div>
+                                <label>Which planet is the one true red planet?</label>
+                                    <select name="redplanet" id="redplanet">
+                                            <option value="pizzaplanet">Pizza Planet</option>
+                                            <option value="mars">Mars</option>
+                                    </select>
+                        
+                                    <p class="error-p"></p>
+                                
+                            </div>
+
+                            <div class="form-group">
+                            
+                                <label>Email Address</label>
+                                <input  name="email" id="email" type="email" placeholder="Email Address" required="required">
+                                <p class="error-p" id="email-error"></p>
+                                
+                            </div>
+                            <div class="form-group">
+                            
+                                <label>Phone Number</label>
+                                <input name="phone" class="form-control" id="phone" type="tel" placeholder="Phone Number" required="required">
+                                <p class="error-p" id="phone-error"></p>
+                            
+                            </div>
+                            <div class="form-group">
+                            
+                                <label>Message</label>
+                                <textarea name="message" id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
+                                <p id="message-error" class="error-p"></p>
+                            
+                            </div>
+                            <br>
+                    
+                            <div>
+                            
+                                <button type="submit" class="brightGreen-bg" id="sendMessageButton">Send</button>
+                                <div id="form-feedback">
+                                        <p id="form-success"></p>
+                                        <p id="form-fail"></p>
+                                </div>
+                            </div>
+                            </form>
+                        
+                    </div>
             </div>
-      
-      
-
-           
-      
         
-    <!-- </div> -->
-    
+        </div><!-- end content-generic -->
 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-    <!-- <script src="js/jqBootstrapValidation.js"></script> -->
+    </div><!-- end contact-page-wrapper -->
+
+    <!-- add firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+
+    <!-- add custom js -->
 	<script src="js/contact.js"></script>
-	
 	<script src="mainMenu.js"></script>
 </body>
 </html>  

@@ -12,13 +12,12 @@
   var messagesRef = firebase.database().ref('messages');
 
   function saveToFb(theData){
-    console.log("hi marie ", theData)
+    
     var newMessageRef = messagesRef.push();
     newMessageRef.set({
       theData:theData
     }).then(
         function(){
-            //$('#contactForm').trigger("reset");
             fbSuccess();
     }).catch(
         function(error) {
@@ -44,32 +43,35 @@
 
     //check name is not blank
     if(isBlank(name)) {document.querySelector('p#name-error').textContent = 'enter name'; return;}
-    // if(notOnlyLetters(name)) {document.querySelector('p#name-error').textContent = 'Earth people do not have numbers in their name'; return;}
+ 
 
     //check email is probably an email
     var email = document.querySelector('input#email').value;
-    if(!isProbablyEmail(email)) {document.querySelector('p#email-error').textContent = 'Is that really your email?'; return;}
+    if(!isProbablyEmail(email)) {
+        document.querySelector('p#email-error').textContent = 'Is that really your email?';
+        // document.getElementById('email-error').scrollIntoView(); 
+        return;}
 
     //check phone is numeric
     var phone = document.querySelector('input#phone').value;
     if(isNotNumeric(phone)) {document.querySelector('p#phone-error').textContent = 'Is that really your phone no.?'; return;}
 
-
     var message = document.querySelector('textarea#message').value;
+    
+    //check message is not blank
+    if(isBlank(message)) {document.querySelector('p#message-error').textContent = 'Enter a message.'; return;}
+
     var favourite = document.querySelector('select#favourite').value;
     var location = document.querySelector('select#location').value;
     var better = document.querySelector("input[type='radio']:checked").value;
     var redplanet = document.querySelector('select#redplanet').value;
- 
-
     var theData = {name, location, email, phone, message, favourite, better, redplanet};
-  
-    console.log("here ", theData);
 
+    //save to firebase
+    saveToFb(theData);
 
-
- //save to firebase
- saveToFb(theData);
+    //reset form
+    document.getElementById("contactForm").reset();
 }
 
 
@@ -91,15 +93,15 @@ function clearErrors(){
 }
 
 //validation functions
+
+//check if field is blank
 function isBlank(str){
     if(str ===''){
         return true;
     }
     return false;
 }
-
-
-   
+  
 function isProbablyEmail(str){
     var re = /\S+@\S+\.\S+/;
         if(str.length<50){
@@ -107,8 +109,6 @@ function isProbablyEmail(str){
         }
     return false;    
 }
-   
-
 
 function isNotNumeric(str){
     if(str.length<20){
@@ -118,11 +118,4 @@ function isNotNumeric(str){
     return true;       
 }
 
-function notOnlyLetters(str){
-    var patt1 = /[^-A-z]/g;
-     if(patt1.test(str)){
-         return true
-     }
-     return false;
- }
 

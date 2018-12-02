@@ -1,0 +1,81 @@
+
+/* contact page specific css */
+.contact-page-wrapper{
+    margin: 0 0.5rem;
+}
+
+.intro-generic{
+    background: linear-gradient(to left, #49424180, #494241e0),url(../images/pizza-fancy.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    display: grid;
+    grid-gap: 2rem;
+    padding-top: 94px;
+    padding-bottom: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.header-generic{
+    grid-area:headergeneric;
+    display: grid;
+}
+.content-generic{
+    grid-area:contentgeneric;
+    display: grid;
+}
+
+/* contact form section */
+section.contact{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: start;
+    grid-gap: 1rem;
+    justify-content: center;
+    justify-items: center;
+}
+
+/* contact form wrapper */
+.contact-wrapper{
+    display: grid;
+    width: 100%;
+    grid-template-rows: 100px 1fr;
+}
+
+/* contact form */
+#contactForm{
+    background: #df8d39;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-group{
+    display: grid;
+    grid-auto-columns: 50vw;
+    grid-auto-rows: 2rem 3rem;
+    justify-content: center;
+}
+
+.form-wrap label{
+    font-weight: bold;
+}
+
+.form-group.radio{
+    grid-gap: 0;
+    grid-auto-rows: 2rem;
+    align-items: center;
+    align-content: center;
+}
+
+p.error-p{
+    color: var(--red);
+    margin:0;
+}
+
+
