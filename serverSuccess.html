@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Payment Confirmation</title>
+<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="all.css"> 
+	<link rel="stylesheet" href="pizzaMaker.css">
+	<style>
+
+		</style>
+</head>
+<body>
+		<div class="wrapper-generic"><!-- whole page -->
+	    <header class="header-generic">
+	
+			
+                <div class="nav-wrap-generic">
+                        <div class="menu-btn closed">
+                        <div class="btn-line"></div>
+                        <div class="btn-line"></div>
+                        <div class="btn-line"></div>
+                        </div>
+            
+                    <nav class="menu show">
+                        <ul class="menu-nav show">
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/about.html" class="nav-link">About</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="/pizzaMaker.html" class="nav-link">Create</a>
+                            </li>
+                            <li class="nav-item nav-item-cart current">
+                                    <a href="cart.html" class="nav-link">Cart</a>
+                                    <span class="nav-cart-items"></span>
+                                    <span class="nav-cart-dets"></span>
+                                </li>
+                            <li class="nav-item">
+                                <a href="/contact.html" class="nav-link">Contact</a>
+                            </li>
+                        </ul>
+                    </nav> 
+                </div>
+                <div class="intro-generic">
+                        <div class="headline headline-red ">
+                                <h1>Confirmation</h1>	
+                        </div>
+                </div>
+            </header>
+		   <style>
+               .intro-generic{
+                background: linear-gradient(to left, #49424180, #494241e0),url(images/pizza-fancy.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr;
+                display: grid;
+                grid-gap: 2rem;
+                padding-top: 94px;
+                padding-bottom: 0;
+                padding-left: 2rem;
+                padding-right: 2rem;
+                }
+               .wrapper-generic{
+                display: grid;
+                    grid-template-areas: "headergeneric" "contentgeneric";
+                    grid-template-columns: 1fr;
+                    grid-auto-rows: 1fr;
+                    grid-gap: 1rem;
+                    margin-left: 0.5rem;
+                    margin-right: 0.5rem;
+                }
+               .header-generic{
+                   grid-area:headergeneric;
+                   display: grid;
+               }
+               .content-generic{
+                   grid-area:contentgeneric;
+                   display: grid;
+               }
+
+		   </style>
+      
+      
+	<div class="content-generic">
+			
+		<div class="success-wrapper">
+			<!-- <div class="headline headline-red"><h1>Cart</h1></div> -->
+			
+
+			<section class="success">
+				<p>payment successful</p>
+			</section>
+           
+        </div>
+        
+	</div>
+
+
+	<!-- <script src="js/cart.js"></script> -->
+	<!-- <script src="main.js"></script> -->
+	<script src="mainMenu.js"></script>
+</body>
+</html>

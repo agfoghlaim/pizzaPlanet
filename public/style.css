@@ -1,0 +1,631 @@
+/*------------------
+homepage Header
+------------------*/
+
+.wrapper{
+	display: grid;
+	overflow: hidden;
+	margin:0 0.5rem;
+}
+
+/* changing header, #stars position */
+.header{
+	/* height:100vh;
+	overflow: hidden;
+	position: relative; 
+	display: grid;
+	align-content: center;
+	margin-bottom: 1rem; */
+	height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    align-content: center;
+    margin-bottom: 1rem;
+    grid-template-areas: "pic" "h";
+    grid-template-rows: 70vh 30vh;
+    align-items: center;
+}
+
+.header-create{
+	overflow: hidden; /*stop stars spilling*/
+	position: relative; /*stop stars spilling*/
+	display: grid;
+	align-content: center;
+	/* margin-bottom: 1rem; */
+
+}
+.content{
+	display:grid;
+	grid-gap:1rem;
+}
+
+
+	/*#star layer*/
+    #stars{
+      width:100%;
+      height:100vh;
+	  background: #494241;
+	  position:absolute;
+    }
+
+    /*.twinkle* added in js*/
+     .twinkle1{
+      animation:twinkle 6s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+        .twinkle2{
+      animation:twinkle 3s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-delay:2s;
+    }
+        .twinkle3{
+      animation:twinkle 5s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-delay:1s;
+    }
+	
+	    @keyframes twinkle{
+	      0%{opacity:0.1;}
+	      100%{opacity:1;}
+	    }
+
+		.main-img{
+			display: grid;
+			grid-area: pic;
+		}
+
+	svg#Logo_Layer{
+		background: #494241;
+		max-height: 400px;
+	    max-width: 100%;
+	    position: absolute;
+	    top:100px; /*to center vertically*/
+		background: transparent;
+		 display: grid; /*for firefox */
+		 justify-self: center; /* for firefox */
+	}
+
+		/*.spaceVeg will need a media query*/
+		/*.spaceVeg Layer*/
+		.spaceVeg{
+			position: absolute;
+			top: 0;
+		    /*width: 100%;*/
+			height:100vh;
+		    
+		    animation:float 4s linear;
+		    animation-iteration-count:infinite;
+		    animation-direction: alternate;
+		}
+
+			@keyframes float{
+				0%{transform:translate(-5px, 5px);}
+
+				100%{transform:translate(0px, 0px);}
+			}
+
+		/*svg front layer - logo*/
+
+			/*'pizza planet' text*/
+			.letter{
+				animation:orbitRandom 1s ease-in;
+				animation-fill-mode: forwards;
+				animation-delay:2s;
+				transform:scale(0);
+			}
+				@keyframes orbitRandom{
+					0%{transform:scale(0.1);}
+					100%{transform:scale(1);}
+				}
+
+/*'pizza planet' text backgroune*/
+.writingBg{
+	opacity: 0;
+	animation:writingBg 0.3s ease-in;
+	animation-fill-mode: forwards;
+	animation-delay:3s;	
+}
+@keyframes writingBg{
+	0%{opacity:0;}
+	100%{opacity:1;}
+}
+
+
+.pizza{
+	transform-origin:150px;
+	animation:moveInFade 3s;
+}
+@keyframes moveInFade{
+	0%{opacity:0;transform:scale(0.5);}
+	100%{opacity:1;transform:scale(1);}
+}
+
+h1.now-delivering{
+	/* position: absolute;
+    bottom: 100px;
+    width: 100%;
+    color: #f9f0ef;
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+    transform-origin: 50%;
+    animation: moveInFade 3s;
+    animation-delay: 4s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+	font-weight: 100;	
+	 */
+	     /* position: absolute; */
+    /* bottom: 100px; */
+    width: 100%;
+    color: #f9f0ef;
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+    transform-origin: 50%;
+    animation: moveInFade 3s;
+    animation-delay: 4s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    font-weight: 100;
+    display: grid;
+    grid-area: h;
+}
+
+h1.now-delivering:hover{
+	text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #679580, 0 0 40px #679580, 0 0 50px #679580;
+}
+
+
+
+
+.slice{
+	transform:translate(200px, -200px);
+	animation: pizzaSliceRocket 1s linear;
+	animation-delay: 3s;
+	animation-fill-mode: forwards;
+}
+@keyframes pizzaSliceRocket{
+	0%{transform:translate(200px,-200px);}
+	50%{transform:translate(0px,0px);}
+	100%{transform:translate(6px, -6px);}
+
+}
+
+/*also move pepperoni up after the slice hits */
+.slicePep{
+animation-name: orbit, move;
+animation-duration: 2s, 2s;
+animation-fill-mode: forwards, forwards;
+animation-delay: 0s, 2.5s;
+}
+@keyframes move{
+	0%{transform:translate(0px,0px);}
+	50%{transform:translate(0px,0px);}
+	100%{transform:translate(6px, -6px);}
+}
+
+svg > circle{
+	animation:orbit 3s linear;
+}
+
+@keyframes orbit{
+	0%{transform:rotate(90deg);transform:scale(0.1);}
+	100%{transform:rotate(0deg);transform:scale(1);}
+}
+
+div.planetbreak{
+	display: grid;
+    justify-content: center;
+}
+
+div.planetbreak img{
+	max-width: 4rem;
+}
+
+.headline h1{
+	font-size:1.5rem;
+	font-weight: bold;
+	text-align: center;
+	margin: 0;
+	color: var(--white);
+	display:grid;
+	grid-template-columns: 1fr auto 1fr;
+	align-items: center;
+	grid-gap:3rem;
+
+}
+
+.headline h1:before, .headline h1:after{
+	display: block;
+	content: '';
+	height: 0.2rem;
+	background:linear-gradient(to right, var(--yellow), var(--white));
+
+}
+
+
+.headline h1:after{
+	background:linear-gradient(to left, var(--yellow), var(--white));
+
+}
+.headline-green, .headline-red, .headline-black{
+	/* background: var(--green); */
+		width: 100%;
+		padding:2rem 0;
+		/* padding-bottom: 2rem; */
+}
+
+section.welcome{
+	background: linear-gradient(to left, #49424180, #494241e0),url(images/pizza-fancy.png);
+	background-size: cover;
+    background-repeat: no-repeat;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+	display: grid;
+    grid-template-areas: "welcometext welcomeright";
+    grid-gap: 2rem;
+    padding: 2rem;
+	
+}
+
+div.generic-header{
+	background: linear-gradient(to left, #49424180, #494241e0),url(images/pizza-fancy.png);
+	background-size: cover;
+    background-repeat: no-repeat;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+	display: grid;
+	grid-gap: 2rem;
+	padding-top:94px;
+	padding-bottom:0;
+	padding-left:2rem;
+	padding-right:2rem;
+}
+div.generic-header h1{
+	color: var(--white);
+}
+
+div.welcome-text{
+	grid-area:welcometext;
+	display: grid;
+	justify-content: center;
+	align-items:center;
+	align-content:center;
+	justify-items:center;
+}
+div.welcome-right{
+	grid-area:welcomeright;
+	display:grid;
+	justify-content:center;
+	align-items:center;
+
+}
+div.welcome-text p, div.welcome-text h1{
+	color: var(--white);
+}
+.mainShopContainer{
+	display:grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 1rem;
+}
+
+.pizzaItem{
+	justify-items:center;
+	align-content: center;
+    justify-content: center;
+    justify-items: center;
+	display: grid;
+    padding: 3em 2em;
+	position:relative;
+	transition: all 0.2s linear;
+}
+.pizzaItem p, .dealItem p, .dealItem img, .pizzaItem img{
+	transition: all 0.2s linear;
+}
+.pizzaItem:hover p, .pizzaItem:hover img, .dealItem:hover p, .dealItem:hover img{
+	color:var(--blue);
+	transform:scale(1.1);
+	border-color:transparent;
+	
+}
+
+.pizzaItem:hover h3{
+	color: var(--black);
+}
+
+.pizzaItem:hover h4.price, .dealItem:hover h4.price{
+	color: #a2474e;
+}
+
+.pizzaItem:hover, .dealItem:hover{
+	/* border-color:transparent; */
+	background: var(--white);
+	box-shadow: 1px 2px 6px #494241c7;
+}
+
+/* .pizzaItem::after, .dealItem::after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	
+	height: 100%;
+	opacity: 0;
+	box-shadow: 0 5px 15px var(--black);
+	transition: all 0.2s linear;
+	background:white;
+  } */
+
+
+  /* Transition to showing the bigger shadow on hover */
+  /* .pizzaItem:hover::after, .dealItem:hover::after {
+	opacity: 1;
+	transform: scale(1.01);
+  } */
+
+
+.pizzaItem img{
+max-width: 50%
+} 
+
+.pizzaItem h3, .dealItem h3{
+	text-align:center;
+	color: var(--white);
+	margin:1rem;
+}
+.pizzaItem p{
+	font-family: 'Roboto Mono', monospace;
+	text-align:center;
+	color: var(--white);
+	margin:1rem;
+	font-size: 0.9rem;
+}
+
+.pizzaItem1, .pizzaItem6{
+	/* border: 0.2rem solid var(--red); */
+	background: var(--red);
+}
+.pizzaItem2, .pizzaItem8{
+	/* border: 0.2rem solid var(--green); */
+	background:var(--green);
+}
+.pizzaItem3, .pizzaItem7{
+	/* border: 0.2rem solid var(--yellow); */
+	background:var(--yellow);
+}
+.pizzaItem4, .pizzaItem5{
+	/* border: 0.2rem solid var(--black); */
+	background:var(--black);
+}
+
+
+.pizzas-feat{
+	
+	display:grid;
+
+    grid-gap: 1rem;
+	
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(50vw, auto);
+    grid-template-areas:
+    "marg1 featImg1"
+    "featImg2 marg2"
+    "marg3 featImg3";
+}
+
+
+
+.pizza-feat{
+	display: grid;
+	align-items: center;
+	justify-items:center;
+	padding:20px;
+	background: #f9f0ef;
+	align-content: center;
+}
+.cartArea{
+	display: grid;
+	grid-auto-flow:column;
+	justify-items:right;
+}
+/* .cart-btn-contain{
+	display:grid;
+	justify-content: center;
+} */
+.cartBtn{
+    font-size: 1.5rem;
+    font-weight: bolder;
+	min-width: 3rem;
+	border: 2px solid #67958052;
+	color: #494241a8;
+    padding: 5px 10px;
+}
+
+.textBtn, .orderNow-btn, .addToCartBtn, #closeModal{
+    font-size: 1rem;
+    font-weight: bolder;
+	min-width: 3rem;
+	border: 2px solid #67958052;
+	color: #494241a8;
+    padding:0.5rem 1rem;
+}
+/* .orderNow-btn{
+    border: 2px solid #67958052;
+    color: #494241a8;
+    font-size: 1rem;
+    font-weight: bolder;
+    min-width: 3rem;
+    border: 2px solid #67958052;
+    color: #494241a8;
+    padding: 0.5rem 1rem;
+} */
+
+
+
+
+
+/* deals section */
+.dealsContainer{
+	display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1rem;
+}
+
+.dealItem{
+	display: grid;
+    grid-template-columns: 2fr 1fr 2fr 3fr;
+    grid-auto-rows: 250px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    padding: 1rem;
+	background: var(--white);
+	transition: all 0.2s linear;
+}
+
+.dealItem img{
+	max-height: 80%;
+}
+p.plus{
+	font-weight: bold;
+	font-size: 40px;
+	font-family: 'Roboto Mono', monospace;
+	justify-self: end;
+	color: var(--white);
+}
+img.dealDrink{
+	max-height: 50%;
+}
+
+h4.price{
+	font-weight: bold;
+	text-align: center;
+	color: var(--white);
+    font-size: 1.5rem;
+    margin: 0;
+}
+.dealCartArea{
+	display:grid;
+	justify-items: center;
+}
+
+.dealCartArea p{
+	font-family: 'Roboto Mono', monospace;
+	color: var(--white);
+
+}
+
+
+.dealItem1{
+	/* border: 0.2rem solid var(--red); */
+	background:var(--red);
+}
+.dealItem2{
+	/* border: 0.2rem solid var(--green); */
+	background:var(--green);
+}
+.dealItem3{
+	/* border: 0.2rem solid var(--yellow); */
+	background:var(--yellow);
+}
+.dealItem4{
+	/* border: 0.2rem solid var(--black); */
+	background:var(--black);
+}
+
+
+section.team{
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5rem;
+    
+}
+.member{
+	/* background:#fff; */
+		display: grid;
+		grid-template-columns: 1fr;
+		align-items: center;
+		padding: 4rem;
+		/* background-image: url(images/spaceVegBlack.svg), linear-gradient(#49424173, #f9f0efd4, #51e80373); */
+		background-image: url(images/spaceVegBlack.svg), linear-gradient(#f9f0ef, #f9f0efba);
+		   background-size: cover;
+		   border: 0.5rem solid var(--yellow);
+}
+/* .member h3{
+	text-align:center;
+} */
+
+.member img{
+	backface-visibility:hidden;
+}
+.member-text{
+	background:var(--white);
+}
+.member-text h3 , .member-text p{
+	text-align:center
+}
+
+/* about page black images */
+
+.feat-imgs{
+	    display: grid;
+    align-items: center;
+    justify-items: center;
+	background-image: url(images/spaceVeg.svg), linear-gradient(#494241ed, #494241);
+    background-size: cover;
+}
+.feat-img1{
+	grid-area: featImg1;
+	
+
+		background: url(images/mattd.png);
+		background-size: cover;
+	
+}
+.feat-img2{
+	grid-area: featImg2;
+
+}
+.feat-img3{
+	grid-area: featImg3;
+
+}
+
+.marg1{
+	grid-area:marg1;
+}
+.marg2{
+	grid-area:marg2;
+}
+.marg3{
+	grid-area:marg3;
+}
+.marg4{
+	grid-area:joe;
+}
+.marg5{
+	grid-area:susan;
+}
+.marg6{
+	grid-area:maria;
+}
+
+
+.pizza-feat .marg{
+	template-area: marg;
+}
+.pizza-feat img{
+	width:300px;
+}
+
+
+/* cart page */
+
+
+
+
+
