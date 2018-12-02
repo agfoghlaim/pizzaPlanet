@@ -118,6 +118,15 @@ function addToCart(e){
       updateStorage()
     }
   })
+
+  theDeals.forEach(p=> {
+    console.log("here ", p.dataName, e.target.dataset.deal)
+    if(p.dataName === e.target.dataset.deal ){
+      cart.push(p);
+      updateCartMenu()
+      updateStorage()
+    }
+  })
 }
 
 //return if the cart is empty

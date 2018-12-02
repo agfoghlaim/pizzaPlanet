@@ -88,14 +88,35 @@ const thePizzas = [
     name:'Scarlett Johansson',
     toppings:[peperoni, cheese],
     price: 13
-  },
-  // {
-  //   dataName: 'cyo',
-  //   name:'Create your Own',
-  //   toppings:[],
-  //   price: 0
-  // }
+  }
 ];
+
+const theDeals = [
+  {
+    dataName: 'deal1',
+    name:'Pizza and a Drink',
+    toppings:[sauce, cheese],
+    price: 9.99
+  },
+  {
+    dataName: 'deal2',
+    name:'Pizza and a Drink',
+    toppings:[bacon, mushrooms, cheese],
+    price: 9.99
+  },
+  {
+    dataName: 'deal3',
+    name:'Pizza and a Drink',
+    toppings:[sauce, cheese],
+    price: 9.99
+  },
+  {
+    dataName: 'deal4',
+    name:'Pizza and a Drink',
+    toppings:[mushrooms, olives, cheese],
+    price: 9.99
+  }
+]
 
 populatePizzas();
 function populatePizzas(){
@@ -118,5 +139,44 @@ function populatePizzas(){
     mainShopContainer.insertAdjacentHTML('beforeend', str);
   })
 }
+
+populateDeals();
+function populateDeals(){
+  const dealsContainer = document.querySelector('.dealsContainer');
+  if(dealsContainer === null) return;
+  theDeals.map((deal,i) =>{
+    let str = 
+        `<div class="dealItem dealItem${i+1}">
+					<img src="images/pizzas/${deal.dataName}.png" alt="">
+					<p class="plus">+</p class="plus">
+					<img class="dealDrink" src="images/pizzas/water.png" alt="">
+					<div class="dealCartArea">
+							<h4 class="price">${deal.price}</h4>
+							<p>Pizza and a drink.</p>
+						<div class="cart-btn-contain">
+							<button class="cartBtn brightGreen-bg cartBtnMinus" data-deal="${deal.dataName}">-</button>
+							<button class="cartBtn brightGreen-bg cartBtnPlus" data-deal="${deal.dataName}">+</button>
+						</div>
+					</div>
+				</div>`;
+    console.log(dealsContainer)
+    dealsContainer.insertAdjacentHTML('beforeend', str);
+  })
+}
+
+// let str = 
+//         `<div class="dealItem dealItem${i+1}">
+// 					<img src="images/pizzas/${deal.dataName}.png" alt="">
+// 					<p class="plus">+</p class="plus">
+// 					<img class="dealDrink" src="images/pizzas/water.png" alt="">
+// 					<div class="dealCartArea">
+// 							<h4 class="price">${deal.price}</h4>
+// 							<p>Pizza and a drink.</p>
+// 						<div class="cart-btn-contain">
+// 							<button class="cartBtn brightGreen-bg">-</button>
+// 							<button class="cartBtn brightGreen-bg">+</button>
+// 						</div>
+// 					</div>
+// 				</div>`;
 
 
