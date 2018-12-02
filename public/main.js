@@ -8,79 +8,6 @@ if(localStorage.theCart){
 updateCartMenu()
 
 
-
-//toppings
-// const mushrooms = {name: 'mushrooms', price:1, used:false};
-// const bacon = {name:'bacon', price:3, used:false};
-// const olives = {name: 'olives', price:2, used:false};
-// const peperoni = {name: 'peperoni', price:1, used:false};
-// const peppers = {name: 'peppers', price:1, used:false};
-// const cheese = {name:'cheese', price:2, used:false};
-// const sauce = {name:'sauce', price: 0, used:false};
-// const onion = {name:'onion', price:1, used:false};
-// const pineapple = {name: 'pineapple', price:1, used:false};
-
-
-// const thePizzas = [
-//   {
-//     dataName: 'kbm',
-//     name:'Kevin Bacon and Mushroom',
-//     toppings:[mushrooms, bacon],
-//     price: 10
-//   },
-//   {
-//     dataName: 'orion',
-//     name:'The Orion Olive',
-//     toppings:[olives, bacon],
-//     price: 12
-//   },
-//   {
-//     dataName: 'sandra',
-//     name:'Sandra Bullock',
-//     toppings:[peperoni, peppers, cheese],
-//     price: 9
-//   },
-//   {
-//     dataName: 'cmm',
-//     name:'Colm Meany Margherita',
-//     toppings:[cheese],
-//     price: 10.99
-//   },
-//   {
-//     dataName: 'sj',
-//     name:'Scarlett Johansson',
-//     toppings:[peperoni, cheese],
-//     price: 13
-//   },
-//   // {
-//   //   dataName: 'cyo',
-//   //   name:'Create your Own',
-//   //   toppings:[],
-//   //   price: 0
-//   // }
-// ];
-// populatePizzas();
-// function populatePizzas(){
-//   const mainShopContainer = document.querySelector('.mainShopContainer');
-//   if(mainShopContainer === null) return;
-//   thePizzas.map((pizza,i) =>{
-//     let str = `
-//     <div class="pizzaItem pizzaItem${i+1}">
-// 					<img src="images/pizzas/${pizza.dataName}.png" alt="">
-// 					<h3>${pizza.name}</h3>
-//           <h4 class="price">€${pizza.price}</h4>
-// 					<p>${pizza.toppings.map(topping=> topping.name)}</p>
-// 					<div class="cartArea">
-// 						<button class="cartBtn brightGreen-bg cartBtnMinus" data-pizza="${pizza.dataName}">-</button>
-// 						<button class="cartBtn brightGreen-bg cartBtnPlus" data-pizza="${pizza.dataName}">+</button>
-// 					</div>
-// 				</div>
-//     `;
-//     console.log(mainShopContainer)
-//     mainShopContainer.insertAdjacentHTML('beforeend', str);
-//   })
-// }
-
 //get add and remove buttons
 var cartBtnsPlus = document.querySelectorAll('.cartBtnPlus');
 var cartBtnsMinus = document.querySelectorAll('.cartBtnMinus');
@@ -94,23 +21,30 @@ cartBtnsMinus.forEach(r => r.addEventListener('click', removeFromCart))
 //add it to the cart
 //update the cart in the nav bar
 function addToCart(e){
-  console.log("cart?: ", cart)
-  //if it's a cyo pizza we want to just add 'ThePizza'
+  //ThePizza is the same structure to pizzas 'ThePizzas' array defined in js/home.js
+
+  //if it's a create your own pizza we want to just add 'ThePizza' to the cart
+  //also... 
+  //update the cart details on the menu, 
+  //update the cart in local storage, 
+  //reset 'ThePizza' to base only, 
+  //reset the topping input buttons on pizzaMaker.html 
+  //and update the summary table in the modal on pizzaMaker.html
   if(e.target.id === 'addToCart'){
-    console.log("it's cyo, about to add..... ", ThePizza)
     cart = JSON.parse(localStorage.theCart);
     cart.push(ThePizza);
-    updateCartMenu()
-    updateStorage()
-    //also need to reset ThePizza
-    resetPizza()
-    //and the topping inputs
+    updateCartMenu();
+    updateStorage();
+    resetPizza();
     resetToppingInputs();
-    //and modal table
     updateModalSummaryTable();
-    
     return;
   }
+
+  //if it's any other pizza or deal..
+  //add it to cart and
+  //update cart details on the menu
+  //and update the cart in localStorage
   thePizzas.forEach(p=> {
     if(p.dataName === e.target.dataset.pizza ){
       cart.push(p);
@@ -129,38 +63,21 @@ function addToCart(e){
   })
 }
 
-//return if the cart is empty
+//return if cart is empty, then
 //find relevent pizza in cart and remove it
 //update the cart in the nav bar
 function removeFromCart(e){
-  //return if cart is empty
+
   if(cart.length === 0 ) return;
 
-  //check if it's a cyo (will have been called from cyo page)
-  if(e.target.id === 'removeFromCart'){
- 
-    //not foolproof but for simplicity remove the last cyo entry in the cart
-    for(var i = cart.length-1; i > 0; i--){
-      if(cart[i].dataName === 'cyo' ){
-        cart.splice(cart.indexOf(cart[i]),1);
-        break;
-      }
-    }
-
-  }else{
-      //and for non cyo pizzas, find them in the cart and remove
-      // cart.forEach(p=> {
-      //   if(p.dataName === e.target.dataset.pizza ){
-      //     cart.splice(cart.indexOf(p),1);
-      //   }
-      // })
-      for(var i = 0; i<cart.length;i++) {
-        if(cart[i].dataName === e.target.dataset.pizza){
+    //find them in the cart and remove
+    for(var i = 0; i<cart.length;i++) {
+          if(cart[i].dataName === e.target.dataset.pizza || cart[i].dataName === e.target.dataset.deal){
           cart.splice(cart.indexOf(cart[i]),1);
           break;
         }
-       } 
-  }
+      } 
+
   updateCartMenu();
   updateStorage();
 }
@@ -181,37 +98,22 @@ function updateCartMenu(){
 //update cart in local storage
 function updateStorage(){
   localStorage.setItem('theCart', JSON.stringify(cart));
-
 }
 
 /////////////////////////////////
 ////////////CREATE YOUR OWN////////////
 /////////////////////////////////
 const cyoCartBtn = document.querySelector('.addToCartBtn');
-
-// const cyoRemoveCartBtn = document.querySelector('.removeFromCart');
 if(cyoCartBtn !==null){
   cyoCartBtn.addEventListener('click', addToCart);
 }
 
-// cyoRemoveCartBtn.addEventListener('click', removeFromCart);
-
-
-////////////////////////////////////////////////////
-//////////////////////////////////////////////////
-//////////////////////////////////////////////////
-//////////////////////////////////////////////////
-//////////////////////////////////////////////////
-//FROM pizzaMaker.js///
-//////////////////////////////////////////////////
-//////////////////////////////////////////////////
-//////////////////////////////////////////////////
-//////////////////////////////////////////////////
 
 function toggleToppings(event) {
-  //TODO if modal is open, return
+  //if modal is open, return
   if(document.querySelector('.modal').classList.contains('showModal')) return;
-      addToPizza(event)
+      addToPizza(event);
+
       //deal with checkboxes , first get .topppings div (parent of clicked checkbox)
       var parent = event.target.parentElement
 
@@ -231,7 +133,7 @@ function toggleToppings(event) {
        return;	
    }
 
-//else create an image element
+  //else create an image element
   var newTopping = document.createElement('img');
 
   //set src,  .svg names correspond to their checkbox values
@@ -242,50 +144,58 @@ function toggleToppings(event) {
   //keep sauce at bottom
   if(this.value === 'sauce'){
       const base = document.getElementById('base');
+
       //sauce always on top of base and under other toppings
       pizzaMakerImgs.insertBefore(newTopping, base.nextSibling);
   }else{
+
       //for all toppings that are not sauce, append (ie on top)
       pizzaMakerImgs.append(newTopping);	
   }    
 }
 
-var checkBoxes = document.querySelectorAll('input[type=checkbox]');
+const checkBoxes = document.querySelectorAll('input[type=checkbox]');
+
 //listen to checkboxes change, toggle the toppings
 checkBoxes.forEach(box => box.addEventListener('change', toggleToppings))
 
-/////////////////////////////MODAL
+//////
+//MODAL
+//////
+
+//toggle modal on pizzaMaker.html
 function toggleModal(){
-
-const modal = document.querySelector('.modal');
-if(modal.classList.contains('showModal')){
-modal.classList.remove('showModal');
-
-
-updateModalSummaryTable();
-}else{
-modal.classList.add('showModal');
-updateModalSummaryTable();	
-}
+  const modal = document.querySelector('.modal');
+  if(modal.classList.contains('showModal')){
+    modal.classList.remove('showModal');
+    updateModalSummaryTable();
+  }else{
+    modal.classList.add('showModal');
+    updateModalSummaryTable();	
+  }
 }
 
+
+//update pizza summary
 function updateModalSummaryTable(){
-const summaryTable = document.getElementById('modalSummaryToppings');
-summaryTable.innerHTML = '';
-ThePizza.toppings.forEach(top => {
-makeStuff('tr', 'modalRow', 'modalSummaryToppings', `
-    <td class="modalTopping">${top.name}</td>
-    <td class="modalToppingPrice">€${top.price}</td>`);
-})
-document.getElementById('modalTotalPrice').textContent = `€${ThePizza.price}`;
+  const summaryTable = document.getElementById('modalSummaryToppings');
+  summaryTable.innerHTML = '';
+  ThePizza.toppings.forEach(top => {
+  makeStuff('tr', 'modalRow', 'modalSummaryToppings', `
+      <td class="modalTopping">${top.name}</td>
+      <td class="modalToppingPrice">€${top.price}</td>`);
+  })
+  document.getElementById('modalTotalPrice').textContent = `€${ThePizza.price}`;
 }
 
+
+//helper function to create table in modal
 function makeStuff(elName, className, appendTo, content){
-const el = document.createElement(elName);
-el.setAttribute('class', className);
-el.innerHTML = content;
-const elem = document.getElementById(appendTo);
-elem.append(el);
+  const el = document.createElement(elName);
+  el.setAttribute('class', className);
+  el.innerHTML = content;
+  const elem = document.getElementById(appendTo);
+  elem.append(el);
 }
 
 const orderBtn = document.querySelector('.orderNow-btn');
@@ -302,7 +212,6 @@ if(orderBtn !== null){
 
 
 ////////////////Order the Pizza
-
 const ThePizza = {
   dataName: 'cyo',
   name:'Create your Own',
@@ -311,50 +220,52 @@ const ThePizza = {
 };
 
 
-
+//add a topping and update the summary table in the modal
 function addTopping(name, price){
-
-ThePizza.pizzaName = 'Create your own';
-ThePizza.toppings.push({name:name, price:price})
-console.log("adding ", parseInt(price))
-ThePizza.price += parseInt(price);
-updateModalSummaryTable();
-
+  ThePizza.pizzaName = 'Create your own';
+  ThePizza.toppings.push({name:name, price:price})
+  console.log("adding ", parseInt(price))
+  ThePizza.price += parseInt(price);
+  updateModalSummaryTable();
 }
 
+//reset 'ThePizza'
 function resetPizza(){
   ThePizza.price = 4;
   ThePizza.toppings = [];
   updatePrice()
-
 }
 
+//remove a topping and update the summary details table
 function removeTopping(name, price){
-ThePizza.toppings = ThePizza.toppings.filter(f => f.name !== name )
-ThePizza.price -= parseInt(price);
-updateModalSummaryTable();
+  ThePizza.toppings = ThePizza.toppings.filter(f => f.name !== name )
+  ThePizza.price -= parseInt(price);
+  updateModalSummaryTable();
 }
-// orderBtn.addEventListener('click', addToPizza);
+
+//add topping to pizza, used in toggleToppings()
 function addToPizza(){
     if(event.target.checked){
         addTopping(event.target.value,event.target.dataset.price)
-        updatePrice()
+        updatePrice();
     }else if(!event.target.checked){
         removeTopping(event.target.value, event.target.dataset.price)
-        updatePrice()
+        updatePrice();
     }
 }
 function updatePrice(){
-  
     const pizzaPrice = document.getElementById('pizzaPrice');
     pizzaPrice.textContent = `  €${ThePizza.price}`;
 }
 
+//reset topping inputs, called after a cyo pizza has been added to the cart
 function resetToppingInputs(){
-  //reset topping inputs
+
+  //get toppings in dom and remove 'toppingOn' class if it exists
   const toppings = document.querySelectorAll('.toppingOn');
   toppings.forEach(t=> t.classList.remove('toppingOn'));
 
+  //reset the checkbox inputs to checked = false;
   const checkBoxes = document.querySelectorAll("input[type='checkbox']")
   checkBoxes.forEach(box=> box.checked = false)
 
