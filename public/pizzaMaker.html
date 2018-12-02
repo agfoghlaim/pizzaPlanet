@@ -1,212 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Pizza Planet</title>
-<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="all.css"> 
-	<link rel="stylesheet" href="pizzaMaker.css">
-	<!-- custom fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	<head>
+		<meta charset="UTF-8">
+		<title>Create Your Own</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="all.css"> 
+		<link rel="stylesheet" href="pizzaMaker.css">
+		<!-- custom fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 
-</head>
-<body>
-	<div class="wrapper"><!-- whole page -->
-	<header class="header-create">
-			<div class="menu-btn closed">
-			   <div class="btn-line"></div>
-			   <div class="btn-line"></div>
-			   <div class="btn-line"></div>
-		   	</div>
-   
-		   <nav class="menu show">
-			   <ul class="menu-nav show">
-				   <li class="nav-item">
-					   <a href="index.html" class="nav-link">Home</a>
-				   </li>
-				   <li class="nav-item">
-					   <a href="/about.html" class="nav-link">About</a>
-				   </li>
-				   <li class="nav-item current">
-					   <a href="/pizza.html" class="nav-link">Create</a>
-				   </li>
-				   <li class="nav-item nav-item-cart">
-						<a href="cart.html" class="nav-link">Cart</a>
-						<span class="nav-cart-items"></span>
-						<span class="nav-cart-dets"></span>
-					</li>
-				   <li class="nav-item">
-					   <a href="/contact.html" class="nav-link">Contact</a>
-				   </li>
-			   </ul>
-		   </nav> 
-	
-	</header>
-		<div class="content">
-			
-
-		   <section class="pizza-maker">
-				<div class="generic-header headline-create">
-						<div class="headline headline-red ">
-								<h1>Create Your Own</h1>
-						</div>
-				</div>
-				
-
-			 <div class="pizza-maker-left">
+	</head>
+	<body>
+		<div class="wrapper"><!-- whole page -->
+			<header class="header-create">
+					<div class="menu-btn closed">
+					<div class="btn-line"></div>
+					<div class="btn-line"></div>
+					<div class="btn-line"></div>
+					</div>
 		
-				   <div class="headline headline-black"><h2>Pizzodic Table of Elements <span id="pizzaPrice"> €4</span></h1></div>
+				<nav class="menu show">
+					<ul class="menu-nav show">
+						<li class="nav-item">
+							<a href="index.html" class="nav-link">Home</a>
+						</li>
+						<li class="nav-item">
+							<a href="/about.html" class="nav-link">About</a>
+						</li>
+						<li class="nav-item current">
+							<a href="/pizza.html" class="nav-link">Create</a>
+						</li>
+						<li class="nav-item nav-item-cart">
+								<a href="cart.html" class="nav-link">Cart</a>
+								<span class="nav-cart-items"></span>
+								<span class="nav-cart-dets"></span>
+							</li>
+						<li class="nav-item">
+							<a href="/contact.html" class="nav-link">Contact</a>
+						</li>
+					</ul>
+				</nav> 
+			
+			</header>
+			<div class="content">
+				
+				<!-- main section -->
+			<section class="pizza-maker">
+					<div class="generic-header headline-create">
+							<div class="headline headline-red ">
+									<h1>Create Your Own</h1>
+							</div>
+					</div>
+					
+					<!-- left column -->
+					<div class="pizza-maker-left">
+						<div class="headline headline-black">
+							<h2>Pizzodic Table of Elements <span id="pizzaPrice"> €4</span></h2>
+							</div>
 
+							<!-- pizza topping buttons container -->
+						<div class="toppingElements">
 
-				   <div class="toppingElements">
-
-						<div class="topping">
-							<label for="sauce">
-								<p class="toppingPrice">0</p>
-								<p class="toppingSymbol">Ts</p>
-								<p class="toppingName">Tomato Sauce</p>
-							</label>
-							<input type="checkbox" name="sauce" value="sauce" data-price="0">
+								<div class="topping">
+									<label for="sauce">
+										<p class="toppingPrice">0</p>
+										<p class="toppingSymbol">Ts</p>
+										<p class="toppingName">Tomato Sauce</p>
+									</label>
+									<input type="checkbox" name="sauce" value="sauce" data-price="0">
+								</div>
+		
+							<div class="topping">
+									<label for="cheese">
+									<p class="toppingPrice">€2</p>
+									<p class="toppingSymbol">Mz</p>
+									<p class="toppingName">Mozerella Cheese</p>
+									</label>
+									<input type="checkbox" name="cheese" value="cheese" data-price="2">
+							</div>
+		
+							<div class="topping">
+									<label for="peperoni" id="peperoniLabel">
+									<p class="toppingPrice">€2</p>
+									<p class="toppingSymbol">Pr</p>
+									<p class="toppingName">Pepperoni</p>
+		
+									</label>
+									<input type="checkbox" name="peperoni" value="peperoni" data-price="2">
+							</div>
+		
+							<div class="topping">
+									<label for="peppers">
+									<p class="toppingPrice">€3</p>
+									<p class="toppingSymbol">Pp</p>
+									<p class="toppingName">Peppers</p>
+									</label>
+									<input type="checkbox" name="peppers" value="peppers" data-price="3">
+							</div>
+		
+							<div class="topping">
+									<label for="mushrooms">
+									<p class="toppingPrice">€3</p>
+									<p class="toppingSymbol">Mh</p>
+									<p class="toppingName">Mushrooms</p>
+									</label>
+									<input type="checkbox" name="mushrooms" value="mushrooms" data-price="3">
+							</div>
+							
+							<div class="topping">
+									<label for="pineapple">
+									<p class="toppingPrice">€2</p>
+									<p class="toppingSymbol">Pa</p>
+									<p class="toppingName">Pineapple</p>
+									</label>
+									<input type="checkbox" name="pineapple" value="pineapple" data-price="2">
+							</div> 
+		
+							<div class="topping">
+									<label for="olives">
+									<p class="toppingPrice">€4</p>
+									<p class="toppingSymbol">Ov</p>
+									<p class="toppingName">Olives</p>
+									</label>
+									<input type="checkbox" name="olives" value="olives" data-price="4">
+							</div>
+							
+							<div class="topping">
+									<label for="onion">
+									<p class="toppingPrice">€1</p>
+									<p class="toppingSymbol">On</p>
+									<p class="toppingName">Onion</p>
+									</label>
+									<input type="checkbox" name="onion" value="onion" data-price="1">
+							</div>
+							
+							<div class="topping">				
+								<label for="bacon">
+									<p class="toppingPrice">€4</p>
+									<p class="toppingSymbol">Pg</p>
+									<p class="toppingName">Bacon</p>
+								</label>
+								<input type="checkbox" name="bacon" value="bacon" data-price="4">
+							</div>
 						</div>
-   
-					   <div class="topping">
-						    <label for="cheese">
-							   <p class="toppingPrice">€2</p>
-							   <p class="toppingSymbol">Mz</p>
-							   <p class="toppingName">Mozerella Cheese</p>
-						    </label>
-						    <input type="checkbox" name="cheese" value="cheese" data-price="2">
-					   </div>
-   
-					   <div class="topping">
-						    <label for="peperoni" id="peperoniLabel">
-							   <p class="toppingPrice">€2</p>
-							   <p class="toppingSymbol">Pr</p>
-							   <p class="toppingName">Pepperoni</p>
-   
-						    </label>
-						    <input type="checkbox" name="peperoni" value="peperoni" data-price="2">
-					   </div>
-   
-					   <div class="topping">
-						    <label for="peppers">
-							   <p class="toppingPrice">€3</p>
-							   <p class="toppingSymbol">Pp</p>
-							   <p class="toppingName">Peppers</p>
-						    </label>
-						    <input type="checkbox" name="peppers" value="peppers" data-price="3">
-					   </div>
-   
-					   <div class="topping">
-						    <label for="mushrooms">
-							   <p class="toppingPrice">€3</p>
-							   <p class="toppingSymbol">Mh</p>
-							   <p class="toppingName">Mushrooms</p>
-						    </label>
-						    <input type="checkbox" name="mushrooms" value="mushrooms" data-price="3">
-					   </div>
-					   
-					   <div class="topping">
-						    <label for="pineapple">
-							   <p class="toppingPrice">€2</p>
-							   <p class="toppingSymbol">Pa</p>
-							   <p class="toppingName">Pineapple</p>
-						    </label>
-						    <input type="checkbox" name="pineapple" value="pineapple" data-price="2">
-					   </div> 
-   
-					   <div class="topping">
-						    <label for="olives">
-							   <p class="toppingPrice">€4</p>
-							   <p class="toppingSymbol">Ov</p>
-							   <p class="toppingName">Olives</p>
-						    </label>
-						    <input type="checkbox" name="olives" value="olives" data-price="4">
-					   </div>
-					   
-					   <div class="topping">
-						    <label for="onion">
-							   <p class="toppingPrice">€1</p>
-							   <p class="toppingSymbol">On</p>
-							   <p class="toppingName">Onion</p>
-						    </label>
-						    <input type="checkbox" name="onion" value="onion" data-price="1">
-					   </div>
-					   
-					   <div class="topping">				
-						   <label for="bacon">
-							   <p class="toppingPrice">€4</p>
-							   <p class="toppingSymbol">Pg</p>
-							   <p class="toppingName">Bacon</p>
-						   </label>
-						   <input type="checkbox" name="bacon" value="bacon" data-price="4">
-					   </div>
-   
-					   
-   
-				   </div>
-   
-				   <button class="orderNow-btn yellow-bg">Details</button>
-
-
-				   <button class="addToCartBtn brightGreen-bg" id="addToCart">Add to Cart</button>
-				   <!-- <button class="removeFromCart" id="removeFromCart">Remove from Cart</button>
-				   <a href="cart.html">Go to cart</a> -->
-				   
-			   <!-- </form> -->
-			   <!-- modal -->
-			   <div class="modal">
-				   <img src="images/smallLogo.svg" alt="">
-				   <h2>Pizza Summary</h2>
-				   <table id="summaryTable">
-				   <tr id="modalTableHeading">
-					   <th>Total Price</th>
-					   <th id="modalTotalPrice"></th>
-					</tr>
-					<tr>
-					   <td>base</td>
-					   <td>€4</td>
-					</tr>
-					<tbody id="modalSummaryToppings">
-						<tr class="modalRow">
-						   <td class="modalTopping">Cheese</td>
-						   <td class="modalToppingPrice">€3</td>
-						</tr>
-					</tbody>
-				   </table>
-	   
-				   <button id="closeModal" class="yellow-bg">shut</button>
-			   
-			   	</div>	  
-   
-			 </div><!-- end pizza maker left -->
-   
-			 <div class="pizza-maker-right">
-			   <div id="pizzaMakerImgs" class="pizza-maker-imgs">
-				   <img class="pizza-part" id="base" src="images/pizzaMaker/base.svg" alt="">
-				   
-			   </div>
-						   
-			 </div>
-	   
-   
-		   </section>
-   
-   
-   
-   
-   
-   
-		 </div>
-		</div>  <!-- end content -->
-		 <script>
-
-		 </script>
-
-	<!-- <script src="pizzaMaker.js"></script> -->
-	<!-- <script src="js/listeners.js"></script> -->
-	<script src="js/main.js"></script>
-	<script src="mainMenu.js"></script>
-</body>
+		
+						<button class="orderNow-btn yellow-bg">Details</button>
+						<button class="addToCartBtn brightGreen-bg" id="addToCart">Add to Cart</button>
+			
+					<!-- modal -->
+					<div class="modal">
+						<img src="images/smallLogo.svg" alt="">
+						<h2>Pizza Summary</h2>
+						<table id="summaryTable">
+						<tr id="modalTableHeading">
+							<th>Total Price</th>
+							<th id="modalTotalPrice"></th>
+							</tr>
+							<tr>
+							<td>base</td>
+							<td>€4</td>
+							</tr>
+							<tbody id="modalSummaryToppings">
+								<tr class="modalRow">
+								<td class="modalTopping">Cheese</td>
+								<td class="modalToppingPrice">€3</td>
+								</tr>
+							</tbody>
+						</table>
+			
+						<button id="closeModal" class="yellow-bg">shut</button>
+					
+						</div>	  
+		
+					</div><!-- end pizza maker left -->
+					
+					<!-- right column -->
+					<div class="pizza-maker-right">
+					<div id="pizzaMakerImgs" class="pizza-maker-imgs">
+						<img class="pizza-part" id="base" src="images/pizzaMaker/base.svg" alt="">
+					</div>	   
+					</div>
+		
+				</section>
+	
+			</div><!-- end content -->
+		</div>  <!-- end wrapper -->
+		
+		<script src="js/main.js"></script>
+		<script src="mainMenu.js"></script>
+	</body>
 </html>
