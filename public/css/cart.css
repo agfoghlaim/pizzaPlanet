@@ -65,7 +65,7 @@ section.cart{
 #cart-list td{
     font-family: 'Roboto Mono', monospace;
     text-align: center;
-    width: 100%;
+    font-size: 0.8rem;
 }
 #cart-list td, #cart-list th{
     padding: 0.5rem;

@@ -233,11 +233,20 @@ css for paymentSuccess.html on the server
 		display: grid;
 		align-items: center;
 		justify-content: center;
-		color: var(--white);
+		background:linear-gradient(var(--whiteGradient));
 		font-weight: bold;
 		min-height: 100vh;
+		background: linear-gradient(to left, #49424180, #494241e0),url(../images/pizza-fancy.png);
 }
-  
+
+section.success p{
+	color: white;
+    font-size: 1.2rem;
+}
+}
+.intro-success{
+	margin-top:94px;
+}
 /* general */
 .wrapper{
 	display: grid;

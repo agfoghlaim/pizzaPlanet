@@ -27,7 +27,10 @@
   }
 
   const sendMessageButton = document.querySelector('#sendMessageButton');
-  sendMessageButton.addEventListener('click', handleForm);
+  if(sendMessageButton !== null){
+    sendMessageButton.addEventListener('click', handleForm);
+  }
+  
   
 
   function handleForm(){
