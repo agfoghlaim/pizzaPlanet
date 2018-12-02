@@ -78,7 +78,7 @@ section.cart{
 #cart-list th {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    text-align: left;
+    text-align: center;
     background-color: var(--green);
     color: var(--white);
 }	

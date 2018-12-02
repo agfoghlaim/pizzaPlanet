@@ -1,0 +1,95 @@
+/* about page team section */
+section.team{
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5rem;
+    
+}
+.member{
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: center;
+	padding: 4rem;
+	background-image: url(../images/spaceVegBlack.svg), linear-gradient(var(--whiteGradient));;
+	background-size: cover;
+	align-content: center;	 
+}
+
+.member img{
+	backface-visibility:hidden;
+}
+.member-text{
+	background: linear-gradient(var(--blackGradient));
+}
+.member-text h3 , .member-text p{
+	text-align:center;
+	color: var(--white);
+}
+
+
+
+.pizza-feat{
+	display: grid;
+	align-items: center;
+	justify-items:center;
+	padding:20px;
+	background: #f9f0ef;
+	align-content: center;
+}
+
+/* about page black images */
+.feat-imgs{
+	display: grid;
+    align-items: center;
+    justify-items: center;
+	background-image: url(../images/spaceVeg.svg), linear-gradient(var(--blackGradient));
+    background-size: cover;
+}
+
+.feat-img1{
+	grid-area: featImg1;
+	background: url(../images/mattd.png);
+	background-size: cover;	
+}
+
+.feat-img2{
+	grid-area: featImg2;
+}
+
+.feat-img3{
+	grid-area: featImg3;
+}
+
+.marg1{
+	grid-area:marg1;
+}
+.marg2{
+	grid-area:marg2;
+}
+.marg3{
+	grid-area:marg3;
+}
+.marg4{
+	grid-area:joe;
+}
+.marg5{
+	grid-area:susan;
+}
+.marg6{
+	grid-area:maria;
+}
+
+.pizza-feat img{
+	width:300px;
+}
+
+.pizzas-feat{
+	display:grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(50vw, auto);
+    grid-template-areas:
+    "marg1 featImg1"
+    "featImg2 marg2"
+    "marg3 featImg3";
+}
