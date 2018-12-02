@@ -2,210 +2,115 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Pizza Planet</title>
-<link rel="stylesheet" href="style.css">
+	<title>Cart</title>
+    <link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="all.css"> 
     <link rel="stylesheet" href="pizzaMaker.css">
+    <link rel="stylesheet" href="css/cart.css">
     <!-- custom fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 	
 </head>
+
 <body>
 		<div class="wrapper-generic"><!-- whole page -->
-	    <header class="header-generic">
-	
-			
-                <div class="nav-wrap-generic">
-                        <div class="menu-btn closed">
-                        <div class="btn-line"></div>
-                        <div class="btn-line"></div>
-                        <div class="btn-line"></div>
-                        </div>
-            
-                    <nav class="menu show">
-                        <ul class="menu-nav show">
-                            <li class="nav-item">
-                                <a href="index.html" class="nav-link">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/about.html" class="nav-link">About</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="/pizzaMaker.html" class="nav-link">Create</a>
-                            </li>
-                            <li class="nav-item nav-item-cart current">
-                                    <a href="cart.html" class="nav-link">Cart</a>
-                                    <span class="nav-cart-items"></span>
-                                    <span class="nav-cart-dets"></span>
-                                </li>
-                            <li class="nav-item">
-                                <a href="/contact.html" class="nav-link">Contact</a>
-                            </li>
-                        </ul>
-                    </nav> 
-                </div>
-
-
-                <div class="intro-generic">
-                        <div class="headline headline-red ">
-                                <h1>Cart</h1>	
-                        </div>
-                </div>
-            </header>
-		   <style>
-               .intro-generic{
-                background: linear-gradient(to left, #49424180, #494241e0),url(images/pizza-fancy.png);
-                background-size: cover;
-                background-repeat: no-repeat;
-                grid-template-columns: 1fr;
-                grid-template-rows: 1fr;
-                display: grid;
-                grid-gap: 2rem;
-                padding-top: 94px;
-                padding-bottom: 0;
-                padding-left: 2rem;
-                padding-right: 2rem;
-                }
-               .wrapper-generic{
-                display: grid;
-                    grid-gap: 1rem;
-                    margin-left: 0.5rem;
-                    margin-right: 0.5rem;
-                }
-               .header-generic{
-                
-                   display: grid;
-               }
-               .content-generic{
-                   /* grid-area:contentgeneric;
-                   display: grid; */
-               }
-			   section.cart{
-                grid-template-columns: 3fr 1fr;
-                display: grid;
-                grid-gap: 1rem;
-                min-height: 100vh;
-	
-                }
-
-
-                
-                /* right column */
-                .payment{
-                    display: grid;
-                    justify-content: center;
-                    align-items: start;
-                    align-content: start;
-                    background: var(--white);
-                    padding:1rem;
-                }
-
-                .payment p{
-                    font-family: 'Roboto Mono', monospace;
-                }
-
-                .checkout-btn{
-                    color:var(--black);
-                }
-                
-                /* left column (table) */
-                .cartList{
-                    display: grid;
-    grid-template-columns: 75vw;
-                }
-			   .cart-wrapper{
-				/* display: grid;
-				width: 100%;
-				grid-template-rows: 100px 1fr; */
-			}
-			#cart-list{
-				background:var(--yellow);
-				padding: 1rem;
-			}
-			#cart-list td{
-				font-family: 'Roboto Mono', monospace;
-				text-align: center;
-				width: 100%;
-			}
-			#cart-list td, #cart-list th{
-				padding: 0.5rem;
-				
-			}
-			#cart-list tr{
-                background-color: var(--white);
-               
-				}
-
-			/* #cart-list tr:hover {background-color: var(--black);} */
-			#cart-list th {
-				padding-top: 1rem;
-				padding-bottom: 1rem;
-				text-align: left;
-				background-color: var(--green);
-				color: white;
-			}	
-
-			.cart-blank{
-				border:none !important;
-			}
-		   </style>
-      
-      
-	<div class="content-generic">
-			
-		<div class="cart-wrapper">
-		
-			
-
-			<section class="cart">
-                <div class="cartList"></div>
-
-                <div class="payment">
-                    <p class="cart-total"></p>
-                    <p class="cart-items"></p>
-                    <form action="http://localhost:5000/charge" 
-                            method="POST" 
-                            id="stripeForm">
-                        <script
-                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                        data-key="pk_test_7M8j0cJ4nTKtYEGrAx9CpHeY"
-                        data-amount=`${total}`
-                        data-name="pizza"
-                        data-zip-code="true"
-                        data-description="PizzaPlanet"
-                        data-shipping-address = "true"
-                        data-billing-address = "true"
-                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                        data-locale="auto">
-                        </script>
-
-                        <!-- hide default stripe button -->
-                        <script>
-                            document.querySelector('.stripe-button-el').style.display = 'none';
-                        </script>
-
-                        <!-- custom submit button(will activate stripe) -->
-                        <button type = "submit" class="checkout-btn brightGreen-bg">Pay Now</button>
-
-                        <!-- hidden input to send amount to server -->
-                        <input name="hiddenAmount" value ="" id="hiddenAmount" hidden>
-                    
-                        
-                    </form> 
-                </div>
-             
-			</section>
-           
-        </div>
+            <header class="header-generic">
         
-    </div>
-    
+                
+                    <div class="nav-wrap-generic">
+                            <div class="menu-btn closed">
+                            <div class="btn-line"></div>
+                            <div class="btn-line"></div>
+                            <div class="btn-line"></div>
+                            </div>
+                
+                        <nav class="menu show">
+                            <ul class="menu-nav show">
+                                <li class="nav-item">
+                                    <a href="index.html" class="nav-link">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/about.html" class="nav-link">About</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="/pizzaMaker.html" class="nav-link">Create</a>
+                                </li>
+                                <li class="nav-item nav-item-cart current">
+                                        <a href="cart.html" class="nav-link">Cart</a>
+                                        <span class="nav-cart-items"></span>
+                                        <span class="nav-cart-dets"></span>
+                                    </li>
+                                <li class="nav-item">
+                                    <a href="/contact.html" class="nav-link">Contact</a>
+                                </li>
+                            </ul>
+                        </nav> 
+                    </div>
+
+
+                    <div class="intro-generic">
+                        <div class="headline headline-red ">
+                            <h1>Cart</h1>	
+                        </div>
+                    </div>
+            </header> 
+            <div class="content-generic">
+                    
+                <div class="cart-wrapper">
+                    <section class="cart">
+
+                        <!-- cart html will go in .cartList -->
+                        <div class="cartList"></div>
+                        
+                        <!-- stripe button (will be hidden) -->
+                        <div class="payment">
+                            <p class="cart-total"></p>
+                            <p class="cart-items"></p>
+                            <form action="http://localhost:5000/charge" 
+                                    method="POST" 
+                                    id="stripeForm">
+                                <script
+                                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                data-key="pk_test_7M8j0cJ4nTKtYEGrAx9CpHeY"
+                                data-amount=`${total}`
+                                data-name="pizza"
+                                data-zip-code="true"
+                                data-description="PizzaPlanet"
+                                data-shipping-address = "true"
+                                data-billing-address = "true"
+                                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                                data-locale="auto">
+                                </script>
+
+                                <!-- hide default stripe button -->
+                                <script>
+                                    document.querySelector('.stripe-button-el').style.display = 'none';
+                                </script>
+
+                                <!-- custom submit button(will activate stripe) -->
+                                <button type = "submit" class="checkout-btn brightGreen-bg">Pay Now</button>
+
+                                <!-- hidden input to send amount to server -->
+                                <input name="hiddenAmount" value ="" id="hiddenAmount" hidden>
+                            
+                            </form> 
+                        </div>
+                    
+                    </section>
+                
+                </div>
+
+                <footer>
+                        <p>Pizza Planet 2018</p>
+                </footer>
+
+            </div>
+        </div>
 
 
 
 	<script src="js/cart.js"></script>
-	<!-- <script src="js/main.js"></script> -->
 	<script src="mainMenu.js"></script>
 </body>
 </html>

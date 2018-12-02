@@ -1,0 +1,97 @@
+/* css specific to cart page */
+.intro-generic{
+    background: linear-gradient(to left, #49424180, #494241e0),url(../images/pizza-fancy.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    display: grid;
+    grid-gap: 2rem;
+    padding-top: 94px;
+    padding-bottom: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.wrapper-generic{
+    display: grid;
+    grid-gap: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.header-generic{
+    display: grid;
+}
+
+section.cart{
+    grid-template-columns: 3fr 1fr;
+    display: grid;
+    grid-gap: 1rem;
+    min-height: 100vh;
+    margin-bottom: 1rem;
+}
+
+
+    
+/* right column */
+.payment{
+    display: grid;
+    justify-content: center;
+    align-items: start;
+    align-content: start;
+    background: var(--white);
+    padding:1rem;
+}
+
+.payment p{
+    font-family: 'Roboto Mono', monospace;
+}
+
+.checkout-btn{
+    color:var(--black);
+}
+
+/* left column (table) */
+.cartList{
+    display: grid;
+    grid-template-columns: 75vw;
+}
+
+#cart-list{
+    background:var(--white);
+    padding: 1rem;
+    min-height: 100%;
+}
+#cart-list td{
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+    width: 100%;
+}
+#cart-list td, #cart-list th{
+    padding: 0.5rem;
+}
+
+#cart-list tr{
+    background-color: var(--white);
+}
+
+#cart-list th {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: left;
+    background-color: var(--green);
+    color: var(--white);
+}	
+
+
+
+@media only screen and (max-width: 600px) {
+    section.cart {
+        grid-template-columns: 1fr;
+        grid-auto-flow:row;
+    }
+    .cartList {
+        grid-template-columns: 1fr;
+    }
+
+}

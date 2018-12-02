@@ -11,6 +11,12 @@
   /* --white: #ffffff; */
   --red: #a2474e;
   --yellow: #df8d39;
+  --blackGradient: to left, #494241, #524847;
+  --whiteGradient: to left, #f9f0ef, #ece4e3;
+  --redGradient: to left, #a2474e, #b95a61;
+  --greenGradient: to left,#749a89, #679580;
+  --yellowGradient: to left, #df8d39, #ce873e;
+ 
   
 }
 html {
@@ -279,3 +285,14 @@ span.nav-cart-dets ul li{
 
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
+
+  /* css for paymentSuccess.html on the server */
+.success-wrapper{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-weight: bold;
+  min-height: 100vh;
+
+}

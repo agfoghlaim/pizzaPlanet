@@ -83,7 +83,8 @@ form#modalForm > input{
     }
 }
 .pizza-maker-left{
-    /*background: red;*/
+    
+    background: linear-gradient(var(--whiteGradient));
     grid-area: pizza-maker-left;
     display:grid;
     justify-items:center;
@@ -113,8 +114,8 @@ form#modalForm > input{
     grid-area:elementForm;
 }
 .pizza-maker-right{
-    /*background: blue;*/
-    background: #494241;
+   
+    background: linear-gradient(var(--blackGradient));
     grid-area: pizza-maker-right;
     display:grid;
     position: relative;
