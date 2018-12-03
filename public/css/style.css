@@ -33,7 +33,7 @@ define global colours and gradients
   body {
 	font-family: 'Raleway', sans-serif;
 	margin:0;
-	background-image: url(../images/spaceVeg.svg), linear-gradient(#49424142, #d135310d);
+	background-image: url(../img/spaceVeg.svg), linear-gradient(#49424142, #d135310d);
 	background-size: contain;
 	background-position: fixed;
 	min-height: 100vh;
@@ -236,7 +236,7 @@ css for paymentSuccess.html on the server
 		background:linear-gradient(var(--whiteGradient));
 		font-weight: bold;
 		min-height: 100vh;
-		background: linear-gradient(to left, #49424180, #494241e0),url(../images/pizza-fancy.png);
+		background: linear-gradient(to left, #49424180, #494241e0),url(../img/pizza-fancy.png);
 }
 
 section.success p{
@@ -302,7 +302,7 @@ section.success p{
 generic header on about, contact etc 
 */
 div.generic-header{
-	background: linear-gradient(to left, #524847b0, #524847bf),url(../images/pizza-fancy.png);
+	background: linear-gradient(to left, #524847b0, #524847bf),url(../img/pizza-fancy.png);
 	background-size: cover;
     background-repeat: no-repeat;
     grid-template-columns: 1fr;

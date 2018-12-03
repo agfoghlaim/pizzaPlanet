@@ -137,7 +137,7 @@ function toggleToppings(event) {
   var newTopping = document.createElement('img');
 
   //set src,  .svg names correspond to their checkbox values
-  newTopping.setAttribute('src', `images/pizzaMaker/${this.value}.svg`);
+  newTopping.setAttribute('src', `img/pizzaMaker/${this.value}.svg`);
   newTopping.setAttribute('class', 'pizza-part');
   newTopping.setAttribute('id', this.value)
 
@@ -224,7 +224,6 @@ const ThePizza = {
 function addTopping(name, price){
   ThePizza.pizzaName = 'Create your own';
   ThePizza.toppings.push({name:name, price:price})
-  console.log("adding ", parseInt(price))
   ThePizza.price += parseInt(price);
   updateModalSummaryTable();
 }
@@ -244,7 +243,7 @@ function removeTopping(name, price){
 }
 
 //add topping to pizza, used in toggleToppings()
-function addToPizza(){
+function addToPizza(event){
     if(event.target.checked){
         addTopping(event.target.value,event.target.dataset.price)
         updatePrice();
@@ -271,7 +270,7 @@ function resetToppingInputs(){
 
   //reset pizza html (show base only)
   var images = document.querySelector('#pizzaMakerImgs');
-  const base = `<img class="pizza-part" id="base" src="images/pizzaMaker/base.svg" alt="base">`;
+  const base = `<img class="pizza-part" id="base" src="img/pizzaMaker/base.svg" alt="base">`;
   images.innerHTML = base;
 }
 

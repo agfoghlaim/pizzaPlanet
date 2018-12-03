@@ -139,7 +139,7 @@ function populatePizzas(){
   thePizzas.map((pizza,i) =>{
     let str = `
     <div class="pizzaItem pizzaItem${i+1}">
-					<img src="images/pizzas/${pizza.dataName}.png" alt="">
+					<img src="img/pizzas/${pizza.dataName}.png" alt="">
 					<h3>${pizza.name}</h3>
           <h4 class="price">€${pizza.price}</h4>
 					<p>${pizza.toppings.map(topping=> topping.name)}</p>
@@ -149,7 +149,7 @@ function populatePizzas(){
 					</div>
 				</div>
     `;
-    console.log(mainShopContainer)
+    
     mainShopContainer.insertAdjacentHTML('beforeend', str);
   })
 }
@@ -161,9 +161,9 @@ function populateDeals(){
   theDeals.map((deal,i) =>{
     let str = 
         `<div class="dealItem dealItem${i+1}">
-					<img src="images/pizzas/${deal.dataName}.png" alt="">
+					<img src="img/pizzas/${deal.dataName}.png" alt="">
 					<p class="plus">+</p class="plus">
-					<img class="dealDrink" src="images/pizzas/water.png" alt="">
+					<img class="dealDrink" src="img/pizzas/water.png" alt="">
 					<div class="dealCartArea">
 							<h4 class="price">${deal.price}</h4>
 							<p>${deal.name}</p>
@@ -173,7 +173,7 @@ function populateDeals(){
 						</div>
 					</div>
 				</div>`;
-    console.log(dealsContainer)
+   
     dealsContainer.insertAdjacentHTML('beforeend', str);
   })
 }

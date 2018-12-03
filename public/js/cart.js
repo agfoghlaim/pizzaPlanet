@@ -42,23 +42,16 @@ function updateCartMenu(){
       return;
     }
     total = getTotal();
-    console.log(cart)
+   
       var str = `<table id="cart-list">
-      <thead>
-     
-   
-      <th>Pizza Name</th>
-    
-      <th>Price</th>
-      <th>Toppings</th>
-      <th>Remove</th>
-    
-   
-      </thead>
+        <thead>
+          <th>Pizza Name</th>
+          <th>Price</th>
+          <th>Toppings</th>
+          <th>Remove</th>
+        </thead>
       <tbody>
-  
-      `
-      ;
+      `;
 
       //for each item in the cart, get the toppings name and price
       //create str with cart info
@@ -87,7 +80,6 @@ function updateCartMenu(){
       var total = 0;
       cart.forEach(i=>total+=i.price);
       //return total;
-     console.log("setting total")
 
       //also update stripe charge 
       //  const stripeForm = document.querySelector('.stripe-button');
@@ -97,7 +89,6 @@ function updateCartMenu(){
       //  console.log("stripe amt ", stripeForm.dataset.amount )
        var hiddenAmount = document.querySelector('#hiddenAmount');
        hiddenAmount.value = total*100;
-       console.log("set cokey to ", hiddenAmount.value)
        return total.toFixed(2);
 
   }
@@ -110,7 +101,7 @@ function updateCartMenu(){
 
   function removeFromCart(e){
     //return if cart is empty
-   console.log("in remove")
+ 
     if(cart.length === 0 ) return;
 
   

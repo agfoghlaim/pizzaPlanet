@@ -198,7 +198,7 @@ h1.now-delivering:hover{
  */
 
  section.welcome{
-	background: linear-gradient(to left, #49424180, #494241e0),url(../images/pizza-fancy.png);
+	background: linear-gradient(to left, #49424180, #494241e0),url(../img/pizza-fancy.png);
 	background-size: cover;
     background-repeat: no-repeat;
     grid-template-columns: 2fr 1fr;

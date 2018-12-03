@@ -33,7 +33,7 @@
   
   
 
-  function handleForm(){
+  function handleForm(event){
     
     //prevent form submitting and handle with js instead
     event.preventDefault();

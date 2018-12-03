@@ -10,7 +10,7 @@ section.team{
 	grid-template-columns: 1fr;
 	align-items: center;
 	padding: 4rem;
-	background-image: url(../images/spaceVegBlack.svg), linear-gradient(var(--whiteGradient));;
+	background-image: url(../img/spaceVegBlack.svg), linear-gradient(var(--whiteGradient));;
 	background-size: cover;
 	align-content: center;	 
 }
@@ -42,13 +42,13 @@ section.team{
 	display: grid;
     align-items: center;
     justify-items: center;
-	background-image: url(../images/spaceVeg.svg), linear-gradient(var(--blackGradient));
+	background-image: url(../img/spaceVeg.svg), linear-gradient(var(--blackGradient));
     background-size: cover;
 }
 
 .feat-img1{
 	grid-area: featImg1;
-	background: url(../images/mattd.png);
+	background: url(../img/about/mattd.png);
 	background-size: cover;	
 }
 
