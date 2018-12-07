@@ -66,6 +66,7 @@ form#modalForm > input{
     "orderNow";
     grid-gap:1rem;
     position: relative;
+    align-content: center;
 }
 
 .pizza-maker-imgs{
