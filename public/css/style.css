@@ -356,13 +356,15 @@ div.generic-header h1{
 		  .pizzas-feat {
 			grid-template-columns: 1fr;
 			grid-auto-rows: 1fr;
-			grid-template-areas: "marg1" "featImg1"
+			/* grid-template-areas: "marg1" "featImg1"
 			"featImg2" "marg2"
-			"marg3" "featImg3";
+			"marg3" "featImg3"; */
+			grid-template-areas: "marg1" "featImg1" "marg2" "featImg2" "marg3" "featImg3";
 		   }
   
 		  section.team {
-			grid-template-columns: 1fr;
+				grid-template-columns: 1fr;
+				grid-template-areas: "joe" "joe-pic" "susan" "susan-pic" "qa" "qa-pic" "maria" "maria-pic";
 		  }
 	}
   

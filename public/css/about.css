@@ -1,33 +1,4 @@
-/* about page team section */
-section.team{
-	display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 0.5rem;
-    
-}
-.member{
-	display: grid;
-	grid-template-columns: 1fr;
-	align-items: center;
-	padding: 4rem;
-	background-image: url(../img/spaceVegBlack.svg), linear-gradient(var(--whiteGradient));;
-	background-size: cover;
-	align-content: center;	 
-}
-
-.member img{
-	backface-visibility:hidden;
-}
-.member-text{
-	background: linear-gradient(var(--blackGradient));
-}
-.member-text h3 , .member-text p{
-	text-align:center;
-	color: var(--white);
-}
-
-
-
+/* css for about page only */
 .pizza-feat{
 	display: grid;
 	align-items: center;
@@ -93,3 +64,40 @@ section.team{
     "featImg2 marg2"
     "marg3 featImg3";
 }
+
+/* about page team section */
+section.team{
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+	grid-gap: 0.5rem;
+	grid-template-areas: "joe joe-pic" "maria-pic maria" "qa qa-pic" "susan-pic susan"
+    
+}
+.member{
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: center;
+	padding: 4rem;
+	background-image: url(../img/spaceVegBlack.svg), linear-gradient(var(--whiteGradient));;
+	background-size: cover;
+	align-content: center;	 
+}
+
+.member img{
+	backface-visibility:hidden;
+}
+.member-text{
+	background: linear-gradient(var(--blackGradient));
+}
+.member-text h3 , .member-text p{
+	text-align:center;
+	color: var(--white);
+}
+#joe{grid-area:joe;}
+#susan{grid-area:susan;}
+#qa{grid-area: qa;}
+#susan{grid-area:susan;}
+#joe-pic{grid-area:joe-pic;}
+#susan-pic{grid-area:susan-pic;}
+#qa-pic{grid-area: qa-pic;}
+#susan-pic{grid-area:susan-pic;}
