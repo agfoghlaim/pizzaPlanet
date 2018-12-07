@@ -205,7 +205,7 @@ h1.now-delivering:hover{
  home page welcome section 
  */
 
- section.welcome{
+.welcome{
 	background: linear-gradient(to left, #49424180, #494241e0),url(../img/pizza-fancy.png);
 	background-size: cover;
     background-repeat: no-repeat;

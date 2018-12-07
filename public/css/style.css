@@ -341,9 +341,11 @@ div.generic-header h1{
 		}
 		
 		section.welcome {
-		  grid-template-columns:1fr;
-		  grid-template-areas: "welcometext" " welcomeright";
-		}
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr 1fr;
+			grid-template-areas: "welcometext" "welcomeright";
+			
+	}
   
 		.dealsContainer {
 		  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -369,10 +371,10 @@ div.generic-header h1{
 	  html {
 	   font-size:12px;
 	  }
-		header.header{
+		/* header.header{
 		  height: 80vh;
 		  grid-template-rows: 60vh 20vh;
-		}
+		} */
 		svg#Logo_Layer{
 		  max-height: 250px;
 		}
