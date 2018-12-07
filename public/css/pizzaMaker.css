@@ -58,7 +58,6 @@ form#modalForm > input{
     background: linear-gradient(var(--whiteGradient));
     grid-area: pizza-maker-left;
     display:grid;
-    justify-items:center;
     min-height: 50vw;
     padding: 0 1rem 1rem 1rem;
     grid-template-areas:
