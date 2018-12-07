@@ -3,6 +3,8 @@
 var cart =[];
 if(localStorage.theCart){
   cart = JSON.parse(localStorage.theCart)
+}else{
+  localStorage.setItem('theCart', JSON.stringify([]))
 }
 
 updateCartMenu()
