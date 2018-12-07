@@ -93,6 +93,7 @@ h1.now-delivering:hover{
 		grid-area: pic;
 		max-height: 60vh;
 		background: transparent;
+		justify-self: center; /*for firefox*/
 
 	}
 
