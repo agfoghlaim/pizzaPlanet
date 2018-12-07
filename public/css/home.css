@@ -4,20 +4,18 @@ css related to homepage only
 
 /* home page header */
 .header{
-	height: 100vh;
-    overflow: hidden;
-    position: relative;
+    height: calc(90vh + 94px);
     display: grid;
-    align-content: center;
-    margin-bottom: 1rem;
-    grid-template-areas: "pic" "h";
-    grid-template-rows: 70vh 30vh;
-    align-items: center;
+    grid-gap: 1rem;
+	overflow: hidden;
+	background: #524847;
+	position: relative;
+	margin-bottom: 1rem;
 }
 	/*#star layer*/
     #stars{
       width:100%;
-      height:100vh;
+      height:calc(90vh + 94px);
 	  background: #494241;
 	  position:absolute;
     }
@@ -50,33 +48,66 @@ css related to homepage only
 
 	/* .main-img wraps the inline logo svg */
 	.main-img{
-		display: grid;
-		grid-area: pic;
+	    margin-top: 94px;
+    grid-template-rows: 4fr 1fr;
+    display: grid;
+    grid-template-areas: "pic" "h";
+    align-items: center;
+	align-content: center;
+	z-index: 1;
+
 	}
+
+	/* ---------------------------
+	Tag line
+	-----------------------------*/
+
+/* tagline */
+h1.now-delivering{
+    color: #f9f0ef;
+	font-family: 'Roboto Mono', monospace;
+	color: #f9f0ef;
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+    grid-area: h;
+    transform-origin: 50%;
+     animation: moveInFade 3s;
+    animation-delay: 4s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+	font-weight: 100;
+	margin: 0;
+    align-self: start;
+}
+
+h1.now-delivering:hover{
+	text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #679580, 0 0 40px #679580, 0 0 50px #679580;
+}
+
 
 	/* ---------------------------
 	logo svg 
 	-----------------------------*/
 	svg#Logo_Layer{
-		background: #494241;
-		max-height: 400px;
-	    max-width: 100%;
-	    position: absolute;
-	    top:100px; /*to center vertically*/
+		
+		grid-area: pic;
+		max-height: 60vh;
 		background: transparent;
-		 display: grid; /*for firefox */
-		 justify-self: center; /* for firefox */
+
 	}
 
-	/*.spaceVeg will need a media query*/
+	
 	/*.spaceVeg Layer*/
 	.spaceVeg{
 		position: absolute;
-		top: 0;
-		height:100vh;
-		animation:float 4s linear;
-		animation-iteration-count:infinite;
+		animation: float 4s linear;
+		animation-iteration-count: infinite;
 		animation-direction: alternate;
+		width: 96%;
+		height: 96%;
+		overflow: hidden;
+		background-image: url(../img/spaceVeg.svg);
+		background-size: cover;
 	}
 
 	/* animation to make .spaceVeg float */
@@ -168,29 +199,6 @@ css related to homepage only
 		max-width: 4rem;
 	}
 
-/* ---------------------------
-	Tag line
-	-----------------------------*/
-
-/* tagline */
-h1.now-delivering{
-    width: 100%;
-    color: #f9f0ef;
-    font-family: 'Roboto Mono', monospace;
-    text-align: center;
-    transform-origin: 50%;
-    animation: moveInFade 3s;
-    animation-delay: 4s;
-    opacity: 0;
-    animation-fill-mode: forwards;
-    font-weight: 100;
-    display: grid;
-    grid-area: h;
-}
-
-h1.now-delivering:hover{
-	text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #679580, 0 0 40px #679580, 0 0 50px #679580;
-}
 
 
 /*
