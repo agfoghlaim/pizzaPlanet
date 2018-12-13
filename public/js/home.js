@@ -1,6 +1,8 @@
 //js for home page only
 
 //Add stars to empty .stars div in main page header main page only
+console.log("hi marie", window.innerWidth, window.innerHeight)
+console.log("hat")
   const stars = document.getElementById('stars'); //empty div
   
   for(let i = 0; i < 100; i++){ //200 stars
@@ -15,8 +17,8 @@
     // if(i%9===0) defaultClass = "twinkle2";
     // if(i%11===0) defaultClass = "twinkle3";
 
-    let rand = Math.floor((Math.random() * 1200) + 1); //random no less than approx screen width
-    let rand2 = Math.floor((Math.random() * 600) + 1); //random no less than header height
+    let rand = Math.floor((Math.random() * window.innerWidth) + 1); //random no less than approx screen width
+    let rand2 = Math.floor((Math.random() * window.innerHeight) + 1); //random no less than header height
     rand = rand +'px';
     rand2 = rand2 +'px';
 
