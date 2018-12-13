@@ -115,7 +115,7 @@ function isProbablyEmail(str){
 
 function isNotNumeric(str){
     if(str.length<20){
-        var p = /[^0-9]/g;
+        var p = /[^0-9+]/g;
         return p.test(str);
     }
     return true;       
