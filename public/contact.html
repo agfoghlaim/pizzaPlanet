@@ -101,8 +101,18 @@
                             <div class="form-group radio">
                             
                                 <label>Which is better?</label>
-                                    <input type="radio" name="better" value="pizza" checked> Pizza
-                                    <input type="radio" name="better" value="burgers"> Burgers
+                                    <div class="radio-div">
+                                        <input type="radio" name="better" value="pizza" checked> 
+                                        <label for="better">Pizza</label>
+                                        
+                                    </div>
+                                    <div class="radio-div">
+                                        <input type="radio" name="better" value="burgers"> 
+                                        <label for="better">Burgers</label>
+                                        
+                                    </div>
+                                    
+                                    
                         
                                 <p class="error-p"></p>
                             
@@ -112,8 +122,8 @@
                             
                                 <label>Which planet is the one true red planet?</label>
                                     <select name="redplanet" id="redplanet">
-                                            <option value="pizzaplanet">Pizza Planet</option>
-                                            <option value="mars">Mars</option>
+                                            <option class="opt" value="pizzaplanet">Pizza Planet</option>
+                                            <option class="opt" value="mars">Mars</option>
                                     </select>
                         
                                     <p class="error-p"></p>
@@ -134,17 +144,17 @@
                                 <p class="error-p" id="phone-error"></p>
                             
                             </div>
-                            <div class="form-group">
-                            
+                            <div class="form-group-textarea">
                                 <label>Message</label>
                                 <textarea name="message" id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
                                 <p id="message-error" class="error-p"></p>
                             
                             </div>
+                            
                             <br>
                     
                             <div>
-                            
+                                <p class="errors-above"></p>
                                 <button type="submit" class="brightGreen-bg" id="sendMessageButton">Send</button>
                                 <div id="form-feedback">
                                         <p id="form-success"></p>

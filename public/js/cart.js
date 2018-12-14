@@ -125,7 +125,7 @@ function updateCartMenu(){
 
     //update local storage
     updateStorage();
-    deletebtns = document.querySelectorAll('.cart-delete');
+  deletebtns = document.querySelectorAll('.cart-delete');
   deletebtns.forEach(b=>b.addEventListener('click', removeFromCart));
   
   }

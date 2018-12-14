@@ -1,23 +1,36 @@
   // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCjrinmvvu1HZ3bn140W1ZRDL4HZwpxL50",
-    authDomain: "agfoghlaim-86aa5.firebaseapp.com",
-    databaseURL: "https://agfoghlaim-86aa5.firebaseio.com",
-    projectId: "agfoghlaim-86aa5",
-    storageBucket: "agfoghlaim-86aa5.appspot.com",
-    messagingSenderId: "886048617658"
+//   var config = {
+//     apiKey: "AIzaSyCjrinmvvu1HZ3bn140W1ZRDL4HZwpxL50",
+//     authDomain: "agfoghlaim-86aa5.firebaseapp.com",
+//     databaseURL: "https://agfoghlaim-86aa5.firebaseio.com",
+//     projectId: "agfoghlaim-86aa5",
+//     storageBucket: "agfoghlaim-86aa5.appspot.com",
+//     messagingSenderId: "886048617658"
+//   };
+//   firebase.initializeApp(config);
+var config = {
+    apiKey: "AIzaSyDNH-WfkHS27koIDu0JX_wo23zsq6jfX10",
+    authDomain: "pizzaplanet-19b5e.firebaseapp.com",
+    databaseURL: "https://pizzaplanet-19b5e.firebaseio.com",
+    projectId: "pizzaplanet-19b5e",
+    storageBucket: "pizzaplanet-19b5e.appspot.com",
+    messagingSenderId: "83121485317"
   };
   firebase.initializeApp(config);
+
+
+
 
   var messagesRef = firebase.database().ref('messages');
 
   function saveToFb(theData){
     
-    var newMessageRef = messagesRef.push();
+    var newMessageRef = messagesRef.push()
     newMessageRef.set({
       theData:theData
     }).then(
         function(){
+
             fbSuccess();
     }).catch(
         function(error) {
@@ -34,7 +47,7 @@
   
 
   function handleForm(event){
-    
+    clearErrorAbove()
     //prevent form submitting and handle with js instead
     event.preventDefault();
 
@@ -45,19 +58,20 @@
     var name = document.querySelector('#name').value;
 
     //check name is not blank
-    if(isBlank(name)) {document.querySelector('p#name-error').textContent = 'enter name'; return;}
+    if(isBlank(name)) {document.querySelector('p#name-error').textContent = 'enter name';showErrorAbove(); return;}
  
 
     //check email is probably an email
     var email = document.querySelector('input#email').value;
     if(!isProbablyEmail(email)) {
         document.querySelector('p#email-error').textContent = 'Is that really your email?';
+        showErrorAbove()
         // document.getElementById('email-error').scrollIntoView(); 
         return;}
 
     //check phone is numeric
     var phone = document.querySelector('input#phone').value;
-    if(isNotNumeric(phone)) {document.querySelector('p#phone-error').textContent = 'Is that really your phone no.?'; return;}
+    if(isNotNumeric(phone)) {document.querySelector('p#phone-error').textContent = 'Is that really your phone no.?'; showErrorAbove(); return;}
 
     var message = document.querySelector('textarea#message').value;
     
@@ -77,7 +91,13 @@
     document.getElementById("contactForm").reset();
 }
 
+function showErrorAbove(){
+    document.querySelector('.errors-above').textContent = 'Please address any errors above';
+}
 
+function clearErrorAbove(){
+    document.querySelector('.errors-above').textContent = '';
+}
 //successfully submitted
 function fbSuccess(){
     document.querySelector('p#form-success').textContent = 'Form submitted successfully';

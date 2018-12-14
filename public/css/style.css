@@ -4,7 +4,6 @@ define global colours and gradients
 :root {
 	--green: #679580;
 	--black: #494241;
-	/* --lightGreen: #47A25E; */
 	--black: #494241;
 	--blue: #09489d;
 	--brightGreen: #51e803;
@@ -383,6 +382,21 @@ div.generic-header h1{
 		h1.now-delivering{
 		  font-size: 1.5rem;
 		}
+
+		.form-group, .form-group-textarea {
+			grid-auto-columns: 80vw !important;
+			
+		}
+
+		.form-group{
+			grid-auto-rows: 2rem !important;
+		}
+
+		input[type=text],input[type=tel],input[type=email], select{
+	
+			height: 2rem !important;
+		
+	}
 	}
   
 

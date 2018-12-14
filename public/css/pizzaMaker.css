@@ -110,6 +110,7 @@ input[type=checkbox] {
     top:0;
     left:0;
     margin:0;    
+    outline: 0; 
 }
 
 .toppingHeading{
