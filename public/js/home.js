@@ -1,8 +1,7 @@
 //js for home page only
 
 //Add stars to empty .stars div in main page header main page only
-console.log("hi marie", window.innerWidth, window.innerHeight)
-console.log("hat")
+
   const stars = document.getElementById('stars'); //empty div
   
   for(let i = 0; i < 100; i++){ //200 stars
