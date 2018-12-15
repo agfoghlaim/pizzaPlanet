@@ -13,9 +13,9 @@ console.log("hat")
 
     // set different twinkle classes so twinkle doesn't look like flashing
     // commented out because it's a bit labour intensive
-    // if(i%7===0) defaultClass = "twinkle1"; 
-    // if(i%9===0) defaultClass = "twinkle2";
-    // if(i%11===0) defaultClass = "twinkle3";
+    if(i%7===0) defaultClass = "twinkle1"; 
+    if(i%9===0) defaultClass = "twinkle2";
+    if(i%11===0) defaultClass = "twinkle3";
 
     let rand = Math.floor((Math.random() * window.innerWidth) + 1); //random no less than approx screen width
     let rand2 = Math.floor((Math.random() * window.innerHeight) + 1); //random no less than header height

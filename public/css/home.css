@@ -22,7 +22,7 @@ css related to homepage only
 
     /*.twinkle* added in js*/
     .twinkle1{
-      animation:twinkle 6s;
+      animation:twinkle 4s;
       animation-iteration-count: infinite;
       animation-direction: alternate;
 	}
@@ -261,7 +261,7 @@ div.welcome-text p, div.welcome-text h1{
 	transition: all 0.2s linear;
 }
 .pizzaItem:hover p, .pizzaItem:hover img, .dealItem:hover p, .dealItem:hover img{
-	color:var(--blue);
+	color:var(--black);
 	transform:scale(1.1);
 	border-color:transparent;
 }
@@ -336,14 +336,20 @@ div.welcome-text p, div.welcome-text h1{
 	justify-items:right;
 }
 
-
+/* square +- buttons on homepage */
 .cartBtn{
-    font-size: 1.5rem;
-    font-weight: bolder;
+  font-size: 1.5rem;
 	min-width: 3rem;
 	border: 2px solid #67958052;
-	color: #494241a8;
-    padding: 5px 10px;
+	color: var(--black);
+  padding: 5px 10px;
+}
+
+ button.cartBtn:hover, button.brightGreen-bg, a.textBtn, a.brightGreen-bg{
+	border: 2px solid var(#4942418c);
+	/* color: var(--white); */
+	/* opacity: 0.8; */
+	font-weight: bold;
 }
 
 

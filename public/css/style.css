@@ -60,17 +60,46 @@ define global colours and gradients
 	color: var(--white);
 	transition:all 0.1s linear;
 	cursor: pointer;
-	font-family: 'Raleway', sans-serif;
-  }
+	font-family: 'Roborto mono', sans-serif;
+	outline: 0;
+	box-shadow: 1px 1px 3px #666;
+	}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
   
-  button:hover, .textBtn:hover, button.orderNow-btn:hover, .addToCartBtn:hover, #closeModal:hover{
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+	
+a.textBtn{
+	border: 0;
+	padding: 0.5rem 1rem;
+	color: var(--black);
+	transition:all 0.1s linear;
+	cursor: pointer;
+	font-family: 'Roborto mono', sans-serif;
+	outline: 0;
+	box-shadow: 1px 1px 4px #666;
+}
+  
+  button:hover, a.textBtn:hover, button.orderNow-btn:hover, button.addToCartBtn:hover, button#closeModal:hover{
 		border-color:#4942416e;
-		opacity: 0.8;
+		/* opacity: 0.9; */
 		font-weight: bold;
+		box-shadow: 1px 2px 4px #666;
   }
-  
-  button:active, button:focus{
+	
+
+	button:active,
+	a.textBtn:active,
+	button.orderNow-btn:active,
+	button.addToCartBtn:active,
+	button#closeModal:active{
 	outline:0;
+	box-shadow: 1px 2px 4px #666;
+  transform: translateY(1px);
   }
   
   img {
@@ -86,7 +115,11 @@ define global colours and gradients
   }
   .yellow-bg{
 	background: var(--yellow);
-  }
+	}
+	
+	.black-bg{
+		background: var(--black);
+		}
   
   .dark-text{
 	color: var(--black) !important;
@@ -97,11 +130,16 @@ define global colours and gradients
  */
 .textBtn, .orderNow-btn, .addToCartBtn, #closeModal{
   font-size: 1rem;
-  font-weight: bolder;
+  font-weight: bold;
 	min-width: 3rem;
-	border: 2px solid #67958052;
-	color: #494241a8;
+	padding: 1rem;
+	/* /* border: 2px solid #67958052; */
+	color: #494241a8; 
   padding:0.5rem 1rem;
+}
+
+.orderNow-btn{
+	color: var(--white); 
 }
 
   
@@ -240,9 +278,9 @@ css for paymentSuccess.html on the server
 
 section.success p{
 	color: white;
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
-}
+
 .intro-success{
 	margin-top:94px;
 }
